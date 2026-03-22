@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# BrainStormer local state
+.brainstormer-version
+
+# Cloned agent repos (development only)
+_agent-repos/
+
+# User-specific config (contains local paths)
+obsidian/config.yaml
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/

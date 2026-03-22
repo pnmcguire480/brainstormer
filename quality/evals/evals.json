@@ -1,0 +1,35 @@
+{
+  "skill_name": "paladin",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just finished building a React+Vite+TypeScript dashboard. Run the testing wall on it before I deploy.",
+      "expected_output": "Paladin detects react-vite-ts profile, runs Tiers 1-5 sequentially, reports results with pass/fail/warn per check, and provides human checklist for Tiers 6-7 if automated tiers pass.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "This is a hotfix for a critical bug in production. Just test what's essential — I need to ship fast.",
+      "expected_output": "Paladin runs in hotfix mode (Tiers 1, 2, 5 only) — verifies build, unit tests, and security. Skips integration, edge cases, and human review for speed.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I built a Python FastAPI backend. Run your tests on it.",
+      "expected_output": "Paladin detects python-api profile, uses pytest/ruff/mypy/pip-audit commands, runs all 5 automated tiers with Python-specific checks.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Is this Rust WASM project ready to ship?",
+      "expected_output": "Paladin detects rust-wasm profile, runs cargo check/clippy/fmt/test/audit, checks WASM binary size, and reports verdict.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Run paladin on this project but I want the full human walkthrough too — this is our first release.",
+      "expected_output": "Paladin runs full mode (all 7 tiers). After automated tiers pass, it produces the complete Tier 6 (accessibility/polish) and Tier 7 (final walkthrough) human checklists.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "BrainStormer",
+  "version": "1.0.0",
+  "description": "BrainStormer — The AI Development Operating System. Consolidates project scaffolding (Kernel), code comprehension (CodeGlass), idea multiplication (BrainStormer), and quality gates (PALADIN) into one init-able system backed by Obsidian.",
+  "author": "Patrick McGuire",
+  "license": "MIT",
+  "skills": [
+    { "path": ".", "name": "BrainStormer" },
+    { "path": "kernel", "name": "kernel" },
+    { "path": "ideation", "name": "ideation" },
+    { "path": "comprehension", "name": "comprehension" },
+    { "path": "quality", "name": "quality" }
+  ]
+}

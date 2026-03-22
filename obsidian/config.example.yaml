@@ -1,0 +1,6 @@
+# BrainStormer Obsidian sync configuration
+# Copy this file to config.yaml and update vault_path to your Obsidian vault location.
+
+vault_path: ""
+sync_on_init: true
+projects: {}
