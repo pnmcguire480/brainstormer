@@ -4,6 +4,7 @@ from pathlib import Path
 from core.detector import detect_project, BRAINSTORMER_FILES
 from core.registry import count_agents
 from core.vault import load_config, get_vault_path
+from core.license import format_license_status
 
 
 def cmd_status(opts: dict) -> int:
@@ -86,6 +87,11 @@ def cmd_status(opts: dict) -> int:
     # Agents
     agent_count = count_agents()
     print(f"  Agents: {agent_count} available")
+
+    print()
+
+    # License
+    print(format_license_status())
 
     print()
     return 0

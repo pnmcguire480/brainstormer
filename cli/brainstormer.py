@@ -35,6 +35,7 @@ try:
     from cli.commands.sync import cmd_sync
     from cli.commands.update import cmd_update
     from cli.commands.migrate import cmd_migrate
+    from cli.commands.license_cmd import cmd_license
 except ImportError:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from commands.init import cmd_init
@@ -43,6 +44,7 @@ except ImportError:
     from commands.sync import cmd_sync
     from commands.update import cmd_update
     from commands.migrate import cmd_migrate
+    from commands.license_cmd import cmd_license
 
 
 HELP_TEXT = """
@@ -59,6 +61,7 @@ Commands:
   quality run   Run PALADIN quality tiers 1-5
   quality bootstrap  Install missing test infrastructure
   agent list    Show available agents for this project
+  license       Show, activate, or deactivate your license
   config        Get or set configuration values
   help          Show this help or command-specific help
 
@@ -138,6 +141,21 @@ Options:
   --dry-run           Show what would be imported without making changes
   --force             Overwrite existing files instead of merging
 """,
+    "license": """
+brainstormer license — Manage your BrainStormer license
+
+Usage:
+  brainstormer license                  Show current license tier and status
+  brainstormer license activate <key>   Activate a license key
+  brainstormer license deactivate       Remove license, revert to free tier
+  brainstormer license status           Show detailed license info
+
+Tiers:
+  Community (free)   1 project, 10 agents, no vault sync
+  Pro                Unlimited projects/agents, vault sync, priority updates
+  Team               Pro + shared configs, team agent library
+  Enterprise         SSO, audit logging, air-gapped, custom agents
+""",
     "agent": """
 brainstormer agent list — Show available agents for this project
 
@@ -168,6 +186,9 @@ def parse_args(argv):
     elif command == "config" and len(argv) > 1:
         command = f"config-{argv[1]}"
         argv = argv[2:]
+    elif command == "license":
+        # license keeps its subcommand as a positional arg
+        argv = argv[1:]
     else:
         argv = argv[1:]
 
@@ -228,6 +249,7 @@ def run(argv=None):
         "sync": cmd_sync,
         "update": cmd_update,
         "migrate": cmd_migrate,
+        "license": cmd_license,
         "agent-list": lambda opts: _cmd_agent_list(opts),
     }
 
@@ -242,13 +264,21 @@ def run(argv=None):
 
 def _cmd_agent_list(opts: dict) -> int:
     """Show available agents with progressive disclosure."""
-    from core.detector import detect_project
-    from core.registry import list_agents, count_agents, get_top_agents
+    try:
+        from cli.core.detector import detect_project
+        from cli.core.registry import list_agents, count_agents, get_top_agents
+        from cli.core.license import get_tier_capabilities
+    except ImportError:
+        from core.detector import detect_project
+        from core.registry import list_agents, count_agents, get_top_agents
+        from core.license import get_tier_capabilities
 
     project_root = Path.cwd()
     info = detect_project(project_root)
     show_all = opts.get("all", False)
     total = count_agents()
+    caps = get_tier_capabilities()
+    agent_limit = caps["max_agents"]
 
     print()
     print(f"  Agents for: {info.name} ({info.summary})")
@@ -256,7 +286,15 @@ def _cmd_agent_list(opts: dict) -> int:
     print()
 
     if show_all:
+        if agent_limit != -1:
+            print(f"  Community tier: showing up to {agent_limit} agents.")
+            print(f"  Upgrade to Pro for the full catalog of {total}.")
+            print()
+
         agents = list_agents(show_all=True)
+        if agent_limit != -1:
+            agents = agents[:agent_limit]
+
         # Group by category
         categories = {}
         for a in agents:
@@ -278,7 +316,8 @@ def _cmd_agent_list(opts: dict) -> int:
     else:
         # Progressive disclosure: show top 10 for this stack
         stack = info.framework or info.stack or "general"
-        top = get_top_agents(stack)
+        limit = min(10, agent_limit) if agent_limit != -1 else 10
+        top = get_top_agents(stack, limit=limit)
 
         if top:
             print("  Recommended for your stack:")
