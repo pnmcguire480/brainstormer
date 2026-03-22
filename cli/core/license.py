@@ -121,10 +121,47 @@ def deactivate_license() -> bool:
     return False
 
 
+def _get_signing_secret() -> str:
+    """Load the HMAC signing secret for key validation."""
+    import os
+    secret = os.environ.get("BRAINSTORMER_SIGNING_KEY", "")
+    if secret:
+        return secret
+    keyfile = Path.home() / ".brainstormer" / "signing.key"
+    if keyfile.exists():
+        try:
+            return keyfile.read_text(encoding="utf-8").strip()
+        except OSError:
+            return ""
+    return ""
+
+
+def _verify_signature(tier: str, expiry_str: str, provided_sig: str) -> bool:
+    """Verify the HMAC signature on a license key.
+
+    If no signing key is available, signature check is skipped (offline mode).
+    """
+    secret = _get_signing_secret()
+    if not secret:
+        # No signing key available — accept any well-formed key
+        # This allows offline activation without the signing secret
+        return len(provided_sig) >= 8
+
+    message = f"BS-{tier.upper()}-{expiry_str}"
+    expected = hmac.new(
+        secret.encode("utf-8"),
+        message.encode("utf-8"),
+        hashlib.sha256,
+    ).hexdigest()[:12].upper()
+
+    return hmac.compare_digest(provided_sig, expected)
+
+
 def parse_key(key: str) -> Optional[dict]:
     """Parse a license key into its components.
 
     Format: BS-{TIER}-{YYYYMMDD}-{SIGNATURE}
+    Signature is verified via HMAC when a signing key is available.
     """
     parts = key.strip().upper().split("-")
     if len(parts) != 4:
@@ -140,6 +177,10 @@ def parse_key(key: str) -> Optional[dict]:
     try:
         expiry = datetime.strptime(expiry_str, "%Y%m%d").strftime("%Y-%m-%d")
     except ValueError:
+        return None
+
+    # Verify HMAC signature
+    if not _verify_signature(tier, expiry_str, signature):
         return None
 
     return {

@@ -7,6 +7,17 @@ Version scheme: `YYYY.WW.patch` (year.week.patch).
 
 ## [Unreleased]
 
+## [2026.12.1] - 2026-03-22
+
+### Added
+- HMAC-signed license key generator (`cli/tools/keygen.py`) — admin tool for creating Pro/Team/Enterprise keys
+- HMAC signature validation in license activation — rejects forged keys when signing key is available
+- GitHub Pages deployment workflow for landing page (`site/`)
+- Batch key generation with `--batch` flag and JSON output
+
+### Fixed
+- Project URLs in pyproject.toml now point to correct GitHub repo
+
 ## [2026.12.0] - 2026-03-22
 
 ### Added
