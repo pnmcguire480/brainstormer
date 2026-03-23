@@ -103,7 +103,7 @@ Rules compound over time — each session starts smarter than the last.
 Specialized agents for every task — engineering, marketing, design, testing, sales, game dev, XR, and more. BrainStormer surfaces only the agents relevant to your project's stack.
 
 Agents are sourced from:
-- **Original** — Patrick McGuire's handcrafted 156
+- **community** — Community-sourced collection (156)
 - **wshobson/agents** — Community collection
 - **VoltAgent/awesome-claude-code-subagents** — Curated subagents
 - **0xfurai/claude-code-subagents** — Production-ready agents

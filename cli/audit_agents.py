@@ -106,8 +106,8 @@ def score_agent(agent: dict) -> int:
     """Score agent quality (higher = better, keep this one)."""
     score = 0
 
-    # Prefer original (Patrick's) agents
-    if agent.get("source") == "original":
+    # Prefer community-curated agents
+    if agent.get("source") == "community":
         score += 50
 
     # Prefer agents with more content

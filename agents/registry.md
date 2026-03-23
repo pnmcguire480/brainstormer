@@ -7,29 +7,29 @@ Total: 735 agents (audited and deduplicated)
 
 - **0xfurai/claude-code-subagents**: 110 agents
 - **VoltAgent/awesome-claude-code-subagents**: 71 agents
-- **original**: 156 agents
+- **community**: 156 agents
 - **wshobson/agents**: 398 agents
 
 ## Agent Table
 
 | File | Name | Category | Tier | Source |
 |------|------|----------|------|--------|
-| academic-anthropologist | Anthropologist | academic | 5 | original |
-| academic-geographer | Geographer | academic | 5 | original |
-| academic-historian | Historian | academic | 5 | original |
-| academic-narratologist | Narratologist | academic | 5 | original |
-| academic-psychologist | Psychologist | academic | 5 | original |
+| academic-anthropologist | Anthropologist | academic | 5 | community |
+| academic-geographer | Geographer | academic | 5 | community |
+| academic-historian | Historian | academic | 5 | community |
+| academic-narratologist | Narratologist | academic | 5 | community |
+| academic-psychologist | Psychologist | academic | 5 | community |
 | accessibility-audit-and-testing | Accessibility Audit and Testing | accessibility | 4 | wshobson/agents |
 | accessibility-audit | Accessibility Audit | accessibility | 4 | wshobson/agents |
 | accessibility-compliance | accessibility-compliance | accessibility | 4 | wshobson/agents |
 | accessibility-patterns-reference | Accessibility Patterns Reference | accessibility | 4 | wshobson/agents |
-| accounts-payable-agent | Accounts Payable Agent | accounts | 4 | original |
+| accounts-payable-agent | Accounts Payable Agent | accounts | 4 | community |
 | agent-performance-optimization-workflow | Agent Performance Optimization Workflow | agent | 4 | wshobson/agents |
 | agent-reference | Agent Reference | agent | 4 | wshobson/agents |
 | agent-skills | Agent Skills | agent | 4 | wshobson/agents |
 | agent-type-selection-guide | Agent Type Selection Guide | agent | 4 | wshobson/agents |
-| agentic-identity-trust | Agentic Identity & Trust Architect | agentic | 4 | original |
-| agents-orchestrator | Agents Orchestrator | agents | 4 | original |
+| agentic-identity-trust | Agentic Identity & Trust Architect | agentic | 4 | community |
+| agents-orchestrator | Agents Orchestrator | agents | 4 | community |
 | ai-assistant-development | Ai Assistant Development | ai | 4 | wshobson/agents |
 | airflow-dag-patterns | airflow-dag-patterns | airflow | 4 | wshobson/agents |
 | analyst-startup-analyst | startup-analyst | analyst | 4 | wshobson/agents |
@@ -68,7 +68,7 @@ Total: 735 agents (audited and deduplicated)
 | automated-unit-test-generation | Automated Unit Test Generation | automated | 4 | wshobson/agents |
 | automation-cloud-architect | cloud-architect | automation | 4 | wshobson/agents |
 | automation-customer-support | customer-support | automation | 4 | wshobson/agents |
-| automation-governance-architect | Automation Governance Architect | automation | 4 | original |
+| automation-governance-architect | Automation Governance Architect | automation | 4 | community |
 | automation-sales-automator | sales-automator | automation | 4 | wshobson/agents |
 | automation-terraform-specialist | terraform-specialist | automation | 4 | wshobson/agents |
 | ava-expert | ava-expert | ava | 4 | 0xfurai/claude-code-subagents |
@@ -79,8 +79,8 @@ Total: 735 agents (audited and deduplicated)
 | bazel-build-optimization | bazel-build-optimization | bazel | 4 | wshobson/agents |
 | billing-automation | billing-automation | billing | 4 | wshobson/agents |
 | binary-analysis-patterns | binary-analysis-patterns | binary | 4 | wshobson/agents |
-| blender-addon-engineer | Blender Add-on Engineer | blender | 4 | original |
-| blockchain-security-auditor | Blockchain Security Auditor | blockchain | 4 | original |
+| blender-addon-engineer | Blender Add-on Engineer | blender | 4 | community |
+| blockchain-security-auditor | Blockchain Security Auditor | blockchain | 4 | community |
 | braintree-expert | braintree-expert | braintree | 4 | 0xfurai/claude-code-subagents |
 | breakpoint-strategies | Breakpoint Strategies | breakpoint | 4 | wshobson/agents |
 | bullmq-expert | bullmq-expert | bullmq | 4 | 0xfurai/claude-code-subagents |
@@ -109,7 +109,7 @@ Total: 735 agents (audited and deduplicated)
 | color-systems-reference | Color Systems Reference | color | 4 | wshobson/agents |
 | competitive-landscape | competitive-landscape | competitive | 4 | wshobson/agents |
 | complete-plugin-reference | Complete Plugin Reference | complete | 4 | wshobson/agents |
-| compliance-auditor | Compliance Auditor | compliance | 4 | original |
+| compliance-auditor | Compliance Auditor | compliance | 4 | community |
 | compliance-hr-pro | hr-pro | compliance | 4 | wshobson/agents |
 | compliance-legal-advisor | legal-advisor | compliance | 4 | wshobson/agents |
 | compliance-ui-visual-validator | ui-visual-validator | compliance | 4 | wshobson/agents |
@@ -131,7 +131,7 @@ Total: 735 agents (audited and deduplicated)
 | core-development-fullstack-developer | fullstack-developer | core | 4 | VoltAgent/awesome-claude-code-subagents |
 | core-development-microservices-architect | microservices-architect | core | 4 | VoltAgent/awesome-claude-code-subagents |
 | core-development-websocket-engineer | websocket-engineer | core | 4 | VoltAgent/awesome-claude-code-subagents |
-| corporate-training-designer | Corporate Training Designer | corporate | 4 | original |
+| corporate-training-designer | Corporate Training Designer | corporate | 4 | community |
 | cost-optimization | cost-optimization | cost | 4 | wshobson/agents |
 | cpp-expert | cpp-expert | cpp | 4 | 0xfurai/claude-code-subagents |
 | cqrs-implementation | cqrs-implementation | cqrs | 4 | wshobson/agents |
@@ -149,7 +149,7 @@ Total: 735 agents (audited and deduplicated)
 | data-ai-llm-architect | llm-architect | data | 4 | VoltAgent/awesome-claude-code-subagents |
 | data-ai-nlp-engineer | nlp-engineer | data | 4 | VoltAgent/awesome-claude-code-subagents |
 | data-ai-postgres-pro | postgres-pro | data | 4 | VoltAgent/awesome-claude-code-subagents |
-| data-consolidation-agent | Data Consolidation Agent | data | 4 | original |
+| data-consolidation-agent | Data Consolidation Agent | data | 4 | community |
 | data-driven-feature-development-orchestrator | Data Driven Feature Development Orchestr | data | 4 | wshobson/agents |
 | data-pipeline-architecture | Data Pipeline Architecture | data | 4 | wshobson/agents |
 | data-quality-frameworks | data-quality-frameworks | data | 4 | wshobson/agents |
@@ -169,20 +169,20 @@ Total: 735 agents (audited and deduplicated)
 | dependency-vulnerability-scanning | Dependency Vulnerability Scanning | dependency | 4 | wshobson/agents |
 | deployment-pipeline-design | deployment-pipeline-design | deployment | 4 | wshobson/agents |
 | design-accessibility-expert | accessibility-expert | design | 4 | wshobson/agents |
-| design-brand-guardian | Brand Guardian | design | 4 | original |
-| design-image-prompt-engineer | Image Prompt Engineer | design | 4 | original |
-| design-inclusive-visuals-specialist | Inclusive Visuals Specialist | design | 4 | original |
+| design-brand-guardian | Brand Guardian | design | 4 | community |
+| design-image-prompt-engineer | Image Prompt Engineer | design | 4 | community |
+| design-inclusive-visuals-specialist | Inclusive Visuals Specialist | design | 4 | community |
 | design-review | Design Review | design | 4 | wshobson/agents |
 | design-sql-pro | sql-pro | design | 4 | wshobson/agents |
 | design-system-architect | design-system-architect | design | 4 | wshobson/agents |
 | design-system-patterns | design-system-patterns | design | 4 | wshobson/agents |
 | design-system-setup | Design System Setup | design | 4 | wshobson/agents |
 | design-tokens-deep-dive | Design Tokens Deep Dive | design | 4 | wshobson/agents |
-| design-ui-designer | UI Designer | design | 4 | original |
-| design-ux-architect | UX Architect | design | 4 | original |
-| design-ux-researcher | UX Researcher | design | 4 | original |
-| design-visual-storyteller | Visual Storyteller | design | 4 | original |
-| design-whimsy-injector | Whimsy Injector | design | 4 | original |
+| design-ui-designer | UI Designer | design | 4 | community |
+| design-ux-architect | UX Architect | design | 4 | community |
+| design-ux-researcher | UX Researcher | design | 4 | community |
+| design-visual-storyteller | Visual Storyteller | design | 4 | community |
+| design-whimsy-injector | Whimsy Injector | design | 4 | community |
 | dev-vector-database-engineer | vector-database-engineer | dev | 4 | wshobson/agents |
 | developer-experience-build-engineer | build-engineer | developer | 4 | VoltAgent/awesome-claude-code-subagents |
 | developer-experience-cli-developer | cli-developer | developer | 4 | VoltAgent/awesome-claude-code-subagents |
@@ -213,32 +213,32 @@ Total: 735 agents (audited and deduplicated)
 | elk-expert | elk-expert | elk | 4 | 0xfurai/claude-code-subagents |
 | embedding-strategies | embedding-strategies | embedding | 4 | wshobson/agents |
 | employment-contract-templates | employment-contract-templates | employment | 4 | wshobson/agents |
-| engineering-ai-data-remediation-engineer | AI Data Remediation Engineer | engineering | 4 | original |
-| engineering-ai-engineer | AI Engineer | engineering | 4 | original |
-| engineering-autonomous-optimization-architect | Autonomous Optimization Architect | engineering | 4 | original |
-| engineering-backend-architect | Backend Architect | engineering | 4 | original |
-| engineering-code-reviewer | Code Reviewer | engineering | 4 | original |
-| engineering-data-engineer | Data Engineer | engineering | 4 | original |
-| engineering-database-optimizer | Database Optimizer | engineering | 4 | original |
-| engineering-devops-automator | DevOps Automator | engineering | 4 | original |
-| engineering-embedded-firmware-engineer | Embedded Firmware Engineer | engineering | 4 | original |
-| engineering-feishu-integration-developer | Feishu Integration Developer | engineering | 4 | original |
+| engineering-ai-data-remediation-engineer | AI Data Remediation Engineer | engineering | 4 | community |
+| engineering-ai-engineer | AI Engineer | engineering | 4 | community |
+| engineering-autonomous-optimization-architect | Autonomous Optimization Architect | engineering | 4 | community |
+| engineering-backend-architect | Backend Architect | engineering | 4 | community |
+| engineering-code-reviewer | Code Reviewer | engineering | 4 | community |
+| engineering-data-engineer | Data Engineer | engineering | 4 | community |
+| engineering-database-optimizer | Database Optimizer | engineering | 4 | community |
+| engineering-devops-automator | DevOps Automator | engineering | 4 | community |
+| engineering-embedded-firmware-engineer | Embedded Firmware Engineer | engineering | 4 | community |
+| engineering-feishu-integration-developer | Feishu Integration Developer | engineering | 4 | community |
 | engineering-firmware-analyst | firmware-analyst | engineering | 4 | wshobson/agents |
-| engineering-frontend-developer | Frontend Developer | engineering | 4 | original |
-| engineering-git-workflow-master | Git Workflow Master | engineering | 4 | original |
-| engineering-incident-response-commander | Incident Response Commander | engineering | 4 | original |
+| engineering-frontend-developer | Frontend Developer | engineering | 4 | community |
+| engineering-git-workflow-master | Git Workflow Master | engineering | 4 | community |
+| engineering-incident-response-commander | Incident Response Commander | engineering | 4 | community |
 | engineering-malware-analyst | malware-analyst | engineering | 4 | wshobson/agents |
-| engineering-mobile-app-builder | Mobile App Builder | engineering | 4 | original |
-| engineering-rapid-prototyper | Rapid Prototyper | engineering | 4 | original |
+| engineering-mobile-app-builder | Mobile App Builder | engineering | 4 | community |
+| engineering-rapid-prototyper | Rapid Prototyper | engineering | 4 | community |
 | engineering-reverse-engineer | reverse-engineer | engineering | 4 | wshobson/agents |
-| engineering-security-engineer | Security Engineer | engineering | 4 | original |
-| engineering-senior-developer | Senior Developer | engineering | 4 | original |
-| engineering-software-architect | Software Architect | engineering | 4 | original |
-| engineering-solidity-smart-contract-engineer | Solidity Smart Contract Engineer | engineering | 4 | original |
-| engineering-sre | SRE (Site Reliability Engineer) | engineering | 4 | original |
-| engineering-technical-writer | Technical Writer | engineering | 4 | original |
-| engineering-threat-detection-engineer | Threat Detection Engineer | engineering | 4 | original |
-| engineering-wechat-mini-program-developer | WeChat Mini Program Developer | engineering | 4 | original |
+| engineering-security-engineer | Security Engineer | engineering | 4 | community |
+| engineering-senior-developer | Senior Developer | engineering | 4 | community |
+| engineering-software-architect | Software Architect | engineering | 4 | community |
+| engineering-solidity-smart-contract-engineer | Solidity Smart Contract Engineer | engineering | 4 | community |
+| engineering-sre | SRE (Site Reliability Engineer) | engineering | 4 | community |
+| engineering-technical-writer | Technical Writer | engineering | 4 | community |
+| engineering-threat-detection-engineer | Threat Detection Engineer | engineering | 4 | community |
+| engineering-wechat-mini-program-developer | WeChat Mini Program Developer | engineering | 4 | community |
 | entity-framework-core-best-practices | Entity Framework Core Best Practices | entity | 4 | wshobson/agents |
 | erlang-expert | erlang-expert | erlang | 4 | 0xfurai/claude-code-subagents |
 | error-analysis-and-resolution | Error Analysis and Resolution | error | 4 | wshobson/agents |
@@ -259,8 +259,8 @@ Total: 735 agents (audited and deduplicated)
 | fluid-layouts-and-typography | Fluid Layouts and Typography | fluid | 4 | wshobson/agents |
 | flyway-expert | flyway-expert | flyway | 4 | 0xfurai/claude-code-subagents |
 | full-stack-feature-orchestrator | Full Stack Feature Orchestrator | full | 4 | wshobson/agents |
-| game-audio-engineer | Game Audio Engineer | game | 4 | original |
-| game-designer | Game Designer | game | 4 | original |
+| game-audio-engineer | Game Audio Engineer | game | 4 | community |
+| game-designer | Game Designer | game | 4 | community |
 | gdpr-data-handling | gdpr-data-handling | gdpr | 4 | wshobson/agents |
 | general-code-style-guide | General Code Style Guide | general | 4 | wshobson/agents |
 | generation-mermaid-expert | mermaid-expert | generation | 4 | wshobson/agents |
@@ -276,17 +276,17 @@ Total: 735 agents (audited and deduplicated)
 | gitops-sync-policies | GitOps Sync Policies | gitops | 4 | wshobson/agents |
 | gitops-workflow | gitops-workflow | gitops | 4 | wshobson/agents |
 | go-concurrency-patterns | go-concurrency-patterns | go | 4 | wshobson/agents |
-| godot-gameplay-scripter | Godot Gameplay Scripter | godot | 4 | original |
+| godot-gameplay-scripter | Godot Gameplay Scripter | godot | 4 | community |
 | godot-gdscript-patterns | godot-gdscript-patterns | godot | 4 | wshobson/agents |
-| godot-multiplayer-engineer | Godot Multiplayer Engineer | godot | 4 | original |
-| godot-shader-developer | Godot Shader Developer | godot | 4 | original |
-| government-digital-presales-consultant | Government Digital Presales Consultant | government | 4 | original |
+| godot-multiplayer-engineer | Godot Multiplayer Engineer | godot | 4 | community |
+| godot-shader-developer | Godot Shader Developer | godot | 4 | community |
+| government-digital-presales-consultant | Government Digital Presales Consultant | government | 4 | community |
 | grafana-dashboards | grafana-dashboards | grafana | 4 | wshobson/agents |
 | grafana-expert | grafana-expert | grafana | 4 | 0xfurai/claude-code-subagents |
 | graphql-expert | graphql-expert | graphql | 4 | 0xfurai/claude-code-subagents |
 | graphql-schema-design-patterns | GraphQL Schema Design Patterns | graphql | 4 | wshobson/agents |
 | grpc-expert | grpc-expert | grpc | 4 | 0xfurai/claude-code-subagents |
-| healthcare-marketing-compliance | Healthcare Marketing Compliance Speciali | healthcare | 4 | original |
+| healthcare-marketing-compliance | Healthcare Marketing Compliance Speciali | healthcare | 4 | community |
 | helm-chart-scaffolding | helm-chart-scaffolding | helm | 4 | wshobson/agents |
 | helm-chart-structure-reference | Helm Chart Structure Reference | helm | 4 | wshobson/agents |
 | html-css-style-guide | HTML & CSS Style Guide | html | 4 | wshobson/agents |
@@ -294,7 +294,7 @@ Total: 735 agents (audited and deduplicated)
 | hybrid-cloud-networking | hybrid-cloud-networking | hybrid | 4 | wshobson/agents |
 | hybrid-search-implementation | hybrid-search-implementation | hybrid | 4 | wshobson/agents |
 | hypothesis-testing-reference | Hypothesis Testing Reference | hypothesis | 4 | wshobson/agents |
-| identity-graph-operator | Identity Graph Operator | identity | 4 | original |
+| identity-graph-operator | Identity Graph Operator | identity | 4 | community |
 | implement-track | Implement Track | implement | 4 | wshobson/agents |
 | implementation-plan-track-name | Implementation Plan: {{TRACK_NAME}} | implementation | 4 | wshobson/agents |
 | incident-response-orchestrator | Incident Response Orchestrator | incident | 4 | wshobson/agents |
@@ -354,49 +354,49 @@ Total: 735 agents (audited and deduplicated)
 | languages-java-pro | java-pro | languages | 4 | wshobson/agents |
 | languages-scala-pro | scala-pro | languages | 4 | wshobson/agents |
 | legacy-code-modernization-workflow | Legacy Code Modernization Workflow | legacy | 4 | wshobson/agents |
-| level-designer | Level Designer | level | 4 | original |
+| level-designer | Level Designer | level | 4 | community |
 | linkerd-patterns | linkerd-patterns | linkerd | 4 | wshobson/agents |
 | liquibase-expert | liquibase-expert | liquibase | 4 | 0xfurai/claude-code-subagents |
 | llm-evaluation | llm-evaluation | llm | 4 | wshobson/agents |
 | local-development-setup-for-temporal-python-testing | Local Development Setup for Temporal Pyt | local | 4 | wshobson/agents |
 | loki-expert | loki-expert | loki | 4 | 0xfurai/claude-code-subagents |
-| lsp-index-engineer | LSP/Index Engineer | lsp | 4 | original |
+| lsp-index-engineer | LSP/Index Engineer | lsp | 4 | community |
 | lua-expert | lua-expert | lua | 4 | 0xfurai/claude-code-subagents |
 | machine-learning-pipeline-multi-agent-mlops-orchestration | Machine Learning Pipeline - Multi-Agent  | machine | 4 | wshobson/agents |
-| macos-spatial-metal-engineer | macOS Spatial/Metal Engineer | macos | 4 | original |
+| macos-spatial-metal-engineer | macOS Spatial/Metal Engineer | macos | 4 | community |
 | mariadb-expert | mariadb-expert | mariadb | 4 | 0xfurai/claude-code-subagents |
 | market-opportunity-analysis | Market Opportunity Analysis | market | 4 | wshobson/agents |
 | market-sizing-analysis | market-sizing-analysis | market | 4 | wshobson/agents |
 | market-sizing-data-sources | Market Sizing Data Sources | market | 4 | wshobson/agents |
-| marketing-ai-citation-strategist | AI Citation Strategist | marketing | 3 | original |
-| marketing-app-store-optimizer | App Store Optimizer | marketing | 3 | original |
-| marketing-baidu-seo-specialist | Baidu SEO Specialist | marketing | 3 | original |
-| marketing-bilibili-content-strategist | Bilibili Content Strategist | marketing | 3 | original |
-| marketing-book-co-author | Book Co-Author | marketing | 3 | original |
-| marketing-carousel-growth-engine | Carousel Growth Engine | marketing | 3 | original |
-| marketing-china-ecommerce-operator | China E-Commerce Operator | marketing | 3 | original |
-| marketing-content-creator | Content Creator | marketing | 3 | original |
+| marketing-ai-citation-strategist | AI Citation Strategist | marketing | 3 | community |
+| marketing-app-store-optimizer | App Store Optimizer | marketing | 3 | community |
+| marketing-baidu-seo-specialist | Baidu SEO Specialist | marketing | 3 | community |
+| marketing-bilibili-content-strategist | Bilibili Content Strategist | marketing | 3 | community |
+| marketing-book-co-author | Book Co-Author | marketing | 3 | community |
+| marketing-carousel-growth-engine | Carousel Growth Engine | marketing | 3 | community |
+| marketing-china-ecommerce-operator | China E-Commerce Operator | marketing | 3 | community |
+| marketing-content-creator | Content Creator | marketing | 3 | community |
 | marketing-content-marketer | content-marketer | marketing | 3 | wshobson/agents |
-| marketing-cross-border-ecommerce | Cross-Border E-Commerce Specialist | marketing | 3 | original |
-| marketing-douyin-strategist | Douyin Strategist | marketing | 3 | original |
-| marketing-growth-hacker | Growth Hacker | marketing | 3 | original |
-| marketing-instagram-curator | Instagram Curator | marketing | 3 | original |
-| marketing-kuaishou-strategist | Kuaishou Strategist | marketing | 3 | original |
-| marketing-linkedin-content-creator | LinkedIn Content Creator | marketing | 3 | original |
-| marketing-livestream-commerce-coach | Livestream Commerce Coach | marketing | 3 | original |
-| marketing-podcast-strategist | Podcast Strategist | marketing | 3 | original |
-| marketing-private-domain-operator | Private Domain Operator | marketing | 3 | original |
-| marketing-reddit-community-builder | Reddit Community Builder | marketing | 3 | original |
+| marketing-cross-border-ecommerce | Cross-Border E-Commerce Specialist | marketing | 3 | community |
+| marketing-douyin-strategist | Douyin Strategist | marketing | 3 | community |
+| marketing-growth-hacker | Growth Hacker | marketing | 3 | community |
+| marketing-instagram-curator | Instagram Curator | marketing | 3 | community |
+| marketing-kuaishou-strategist | Kuaishou Strategist | marketing | 3 | community |
+| marketing-linkedin-content-creator | LinkedIn Content Creator | marketing | 3 | community |
+| marketing-livestream-commerce-coach | Livestream Commerce Coach | marketing | 3 | community |
+| marketing-podcast-strategist | Podcast Strategist | marketing | 3 | community |
+| marketing-private-domain-operator | Private Domain Operator | marketing | 3 | community |
+| marketing-reddit-community-builder | Reddit Community Builder | marketing | 3 | community |
 | marketing-search-specialist | search-specialist | marketing | 3 | wshobson/agents |
-| marketing-seo-specialist | SEO Specialist | marketing | 3 | original |
-| marketing-short-video-editing-coach | Short-Video Editing Coach | marketing | 3 | original |
-| marketing-social-media-strategist | Social Media Strategist | marketing | 3 | original |
-| marketing-tiktok-strategist | TikTok Strategist | marketing | 3 | original |
-| marketing-twitter-engager | Twitter Engager | marketing | 3 | original |
-| marketing-wechat-official-account | WeChat Official Account Manager | marketing | 3 | original |
-| marketing-weibo-strategist | Weibo Strategist | marketing | 3 | original |
-| marketing-xiaohongshu-specialist | Xiaohongshu Specialist | marketing | 3 | original |
-| marketing-zhihu-strategist | Zhihu Strategist | marketing | 3 | original |
+| marketing-seo-specialist | SEO Specialist | marketing | 3 | community |
+| marketing-short-video-editing-coach | Short-Video Editing Coach | marketing | 3 | community |
+| marketing-social-media-strategist | Social Media Strategist | marketing | 3 | community |
+| marketing-tiktok-strategist | TikTok Strategist | marketing | 3 | community |
+| marketing-twitter-engager | Twitter Engager | marketing | 3 | community |
+| marketing-wechat-official-account | WeChat Official Account Manager | marketing | 3 | community |
+| marketing-weibo-strategist | Weibo Strategist | marketing | 3 | community |
+| marketing-xiaohongshu-specialist | Xiaohongshu Specialist | marketing | 3 | community |
+| marketing-zhihu-strategist | Zhihu Strategist | marketing | 3 | community |
 | material-design-3-theming | Material Design 3 Theming | material | 4 | wshobson/agents |
 | memory-forensics | memory-forensics | memory | 4 | wshobson/agents |
 | memory-safety-patterns | memory-safety-patterns | memory | 4 | wshobson/agents |
@@ -439,7 +439,7 @@ Total: 735 agents (audited and deduplicated)
 | multi-platform-feature-development-orchestrator | Multi Platform Feature Development Orche | multi | 4 | wshobson/agents |
 | multi-reviewer-patterns | multi-reviewer-patterns | multi | 4 | wshobson/agents |
 | mysql-expert | mysql-expert | mysql | 4 | 0xfurai/claude-code-subagents |
-| narrative-designer | Narrative Designer | narrative | 4 | original |
+| narrative-designer | Narrative Designer | narrative | 4 | community |
 | nats-expert | nats-expert | nats | 4 | 0xfurai/claude-code-subagents |
 | neo4j-expert | neo4j-expert | neo4j | 4 | 0xfurai/claude-code-subagents |
 | nestjs-expert | nestjs-expert | nestjs | 4 | 0xfurai/claude-code-subagents |
@@ -468,13 +468,13 @@ Total: 735 agents (audited and deduplicated)
 | optimization-seo-structure-architect | seo-structure-architect | optimization | 4 | wshobson/agents |
 | orchestration-context-manager | context-manager | orchestration | 4 | wshobson/agents |
 | owasp-top10-expert | owasp-top10-expert | owasp | 4 | 0xfurai/claude-code-subagents |
-| paid-media-auditor | Paid Media Auditor | paid | 3 | original |
-| paid-media-creative-strategist | Ad Creative Strategist | paid | 3 | original |
-| paid-media-paid-social-strategist | Paid Social Strategist | paid | 3 | original |
-| paid-media-ppc-strategist | PPC Campaign Strategist | paid | 3 | original |
-| paid-media-programmatic-buyer | Programmatic & Display Buyer | paid | 3 | original |
-| paid-media-search-query-analyst | Search Query Analyst | paid | 3 | original |
-| paid-media-tracking-specialist | Tracking & Measurement Specialist | paid | 3 | original |
+| paid-media-auditor | Paid Media Auditor | paid | 3 | community |
+| paid-media-creative-strategist | Ad Creative Strategist | paid | 3 | community |
+| paid-media-paid-social-strategist | Paid Social Strategist | paid | 3 | community |
+| paid-media-ppc-strategist | PPC Campaign Strategist | paid | 3 | community |
+| paid-media-programmatic-buyer | Programmatic & Display Buyer | paid | 3 | community |
+| paid-media-search-query-analyst | Search Query Analyst | paid | 3 | community |
+| paid-media-tracking-specialist | Tracking & Measurement Specialist | paid | 3 | community |
 | pandas-expert | pandas-expert | pandas | 4 | 0xfurai/claude-code-subagents |
 | parallel-debugging | parallel-debugging | parallel | 4 | wshobson/agents |
 | parallel-feature-development | parallel-feature-development | parallel | 4 | wshobson/agents |
@@ -492,23 +492,23 @@ Total: 735 agents (audited and deduplicated)
 | preset-team-definitions | Preset Team Definitions | preset | 4 | wshobson/agents |
 | prisma-expert | prisma-expert | prisma | 4 | 0xfurai/claude-code-subagents |
 | processing-payment-integration | payment-integration | processing | 4 | wshobson/agents |
-| product-behavioral-nudge-engine | Behavioral Nudge Engine | product | 5 | original |
-| product-feedback-synthesizer | Feedback Synthesizer | product | 5 | original |
+| product-behavioral-nudge-engine | Behavioral Nudge Engine | product | 5 | community |
+| product-feedback-synthesizer | Feedback Synthesizer | product | 5 | community |
 | product-guidelines | Product Guidelines | product | 5 | wshobson/agents |
-| product-manager | Product Manager | product | 5 | original |
-| product-sprint-prioritizer | Sprint Prioritizer | product | 5 | original |
-| product-trend-researcher | Trend Researcher | product | 5 | original |
+| product-manager | Product Manager | product | 5 | community |
+| product-sprint-prioritizer | Sprint Prioritizer | product | 5 | community |
+| product-trend-researcher | Trend Researcher | product | 5 | community |
 | product-vision | Product Vision | product | 5 | wshobson/agents |
 | programming-c-pro | c-pro | programming | 4 | wshobson/agents |
 | programming-cpp-pro | cpp-pro | programming | 4 | wshobson/agents |
 | programming-elixir-pro | elixir-pro | programming | 4 | wshobson/agents |
 | programming-haskell-pro | haskell-pro | programming | 4 | wshobson/agents |
-| project-management-experiment-tracker | Experiment Tracker | project | 4 | original |
-| project-management-jira-workflow-steward | Jira Workflow Steward | project | 4 | original |
-| project-management-project-shepherd | Project Shepherd | project | 4 | original |
-| project-management-studio-operations | Studio Operations | project | 4 | original |
-| project-management-studio-producer | Studio Producer | project | 4 | original |
-| project-manager-senior | Senior Project Manager | project | 4 | original |
+| project-management-experiment-tracker | Experiment Tracker | project | 4 | community |
+| project-management-jira-workflow-steward | Jira Workflow Steward | project | 4 | community |
+| project-management-project-shepherd | Project Shepherd | project | 4 | community |
+| project-management-studio-operations | Studio Operations | project | 4 | community |
+| project-management-studio-producer | Studio Producer | project | 4 | community |
+| project-manager-senior | Senior Project Manager | project | 4 | community |
 | projection-patterns | projection-patterns | projection | 4 | wshobson/agents |
 | prometheus-configuration | prometheus-configuration | prometheus | 4 | wshobson/agents |
 | prometheus-expert | prometheus-expert | prometheus | 4 | 0xfurai/claude-code-subagents |
@@ -557,14 +557,14 @@ Total: 735 agents (audited and deduplicated)
 | react-navigation-patterns | React Navigation Patterns | react | 4 | wshobson/agents |
 | react-react-native-component-scaffolding | React/React Native Component Scaffolding | react | 4 | wshobson/agents |
 | react-state-management | react-state-management | react | 4 | wshobson/agents |
-| recruitment-specialist | Recruitment Specialist | recruitment | 4 | original |
+| recruitment-specialist | Recruitment Specialist | recruitment | 4 | community |
 | redis-expert | redis-expert | redis | 4 | 0xfurai/claude-code-subagents |
 | refactor-and-clean-code | Refactor and Clean Code | refactor | 4 | wshobson/agents |
 | refactoring-legacy-modernizer | legacy-modernizer | refactoring | 4 | wshobson/agents |
 | regulatory-compliance-check | Regulatory Compliance Check | regulatory | 4 | wshobson/agents |
 | remix-expert | remix-expert | remix | 4 | 0xfurai/claude-code-subagents |
 | replay-testing-for-determinism-and-compatibility | Replay Testing for Determinism and Compa | replay | 4 | wshobson/agents |
-| report-distribution-agent | Report Distribution Agent | report | 4 | original |
+| report-distribution-agent | Report Distribution Agent | report | 4 | community |
 | research-analysis-competitive-analyst | competitive-analyst | research | 4 | VoltAgent/awesome-claude-code-subagents |
 | research-analysis-data-researcher | data-researcher | research | 4 | VoltAgent/awesome-claude-code-subagents |
 | research-analysis-market-researcher | market-researcher | research | 4 | VoltAgent/awesome-claude-code-subagents |
@@ -579,23 +579,23 @@ Total: 735 agents (audited and deduplicated)
 | review-architect-review | architect-review | review | 4 | wshobson/agents |
 | review-dimension-checklists | Review Dimension Checklists | review | 4 | wshobson/agents |
 | risk-metrics-calculation | risk-metrics-calculation | risk | 4 | wshobson/agents |
-| roblox-avatar-creator | Roblox Avatar Creator | roblox | 4 | original |
-| roblox-experience-designer | Roblox Experience Designer | roblox | 4 | original |
-| roblox-systems-scripter | Roblox Systems Scripter | roblox | 4 | original |
+| roblox-avatar-creator | Roblox Avatar Creator | roblox | 4 | community |
+| roblox-experience-designer | Roblox Experience Designer | roblox | 4 | community |
+| roblox-systems-scripter | Roblox Systems Scripter | roblox | 4 | community |
 | rollup-expert | rollup-expert | rollup | 4 | 0xfurai/claude-code-subagents |
 | rust-async-patterns | rust-async-patterns | rust | 4 | wshobson/agents |
 | rust-project-scaffolding | Rust Project Scaffolding | rust | 4 | wshobson/agents |
 | saas-market-sizing-example-ai-powered-email-marketing-for-e-commerce | SaaS Market Sizing Example: AI-Powered E | saas | 4 | wshobson/agents |
 | saga-orchestration | saga-orchestration | saga | 4 | wshobson/agents |
-| sales-account-strategist | Account Strategist | sales | 3 | original |
-| sales-coach | Sales Coach | sales | 3 | original |
-| sales-data-extraction-agent | Sales Data Extraction Agent | sales | 3 | original |
-| sales-deal-strategist | Deal Strategist | sales | 3 | original |
-| sales-discovery-coach | Discovery Coach | sales | 3 | original |
-| sales-engineer | Sales Engineer | sales | 3 | original |
-| sales-outbound-strategist | Outbound Strategist | sales | 3 | original |
-| sales-pipeline-analyst | Pipeline Analyst | sales | 3 | original |
-| sales-proposal-strategist | Proposal Strategist | sales | 3 | original |
+| sales-account-strategist | Account Strategist | sales | 3 | community |
+| sales-coach | Sales Coach | sales | 3 | community |
+| sales-data-extraction-agent | Sales Data Extraction Agent | sales | 3 | community |
+| sales-deal-strategist | Deal Strategist | sales | 3 | community |
+| sales-discovery-coach | Discovery Coach | sales | 3 | community |
+| sales-engineer | Sales Engineer | sales | 3 | community |
+| sales-outbound-strategist | Outbound Strategist | sales | 3 | community |
+| sales-pipeline-analyst | Pipeline Analyst | sales | 3 | community |
+| sales-proposal-strategist | Proposal Strategist | sales | 3 | community |
 | sast-configuration | sast-configuration | sast | 4 | wshobson/agents |
 | sast-security-plugin | Sast Security Plugin | sast | 4 | wshobson/agents |
 | scaffolding-graphql-architect | graphql-architect | scaffolding | 4 | wshobson/agents |
@@ -623,20 +623,20 @@ Total: 735 agents (audited and deduplicated)
 | solidjs-expert | solidjs-expert | solidjs | 4 | 0xfurai/claude-code-subagents |
 | spacing-and-iconography-reference | Spacing and Iconography Reference | spacing | 4 | wshobson/agents |
 | spark-optimization | spark-optimization | spark | 4 | wshobson/agents |
-| specialized-cultural-intelligence-strategist | Cultural Intelligence Strategist | specialized | 4 | original |
-| specialized-developer-advocate | Developer Advocate | specialized | 4 | original |
-| specialized-document-generator | Document Generator | specialized | 4 | original |
+| specialized-cultural-intelligence-strategist | Cultural Intelligence Strategist | specialized | 4 | community |
+| specialized-developer-advocate | Developer Advocate | specialized | 4 | community |
+| specialized-document-generator | Document Generator | specialized | 4 | community |
 | specialized-domains-embedded-systems | embedded-systems | specialized | 4 | VoltAgent/awesome-claude-code-subagents |
 | specialized-domains-fintech-engineer | fintech-engineer | specialized | 4 | VoltAgent/awesome-claude-code-subagents |
 | specialized-domains-iot-engineer | iot-engineer | specialized | 4 | VoltAgent/awesome-claude-code-subagents |
 | specialized-domains-m365-admin | m365-admin | specialized | 4 | VoltAgent/awesome-claude-code-subagents |
 | specialized-domains-seo-specialist | seo-specialist | specialized | 4 | VoltAgent/awesome-claude-code-subagents |
-| specialized-french-consulting-market | French Consulting Market Navigator | specialized | 4 | original |
-| specialized-korean-business-navigator | Korean Business Navigator | specialized | 4 | original |
-| specialized-mcp-builder | MCP Builder | specialized | 4 | original |
-| specialized-model-qa | Model QA Specialist | specialized | 4 | original |
-| specialized-salesforce-architect | Salesforce Architect | specialized | 4 | original |
-| specialized-workflow-architect | Workflow Architect | specialized | 4 | original |
+| specialized-french-consulting-market | French Consulting Market Navigator | specialized | 4 | community |
+| specialized-korean-business-navigator | Korean Business Navigator | specialized | 4 | community |
+| specialized-mcp-builder | MCP Builder | specialized | 4 | community |
+| specialized-model-qa | Model QA Specialist | specialized | 4 | community |
+| specialized-salesforce-architect | Salesforce Architect | specialized | 4 | community |
+| specialized-workflow-architect | Workflow Architect | specialized | 4 | community |
 | spring-boot-expert | spring-boot-expert | spring | 4 | 0xfurai/claude-code-subagents |
 | sql-database-migration-strategy-and-implementation | Sql Database Migration Strategy And Impl | sql | 4 | wshobson/agents |
 | sql-expert | sql-expert | sql | 4 | 0xfurai/claude-code-subagents |
@@ -649,14 +649,14 @@ Total: 735 agents (audited and deduplicated)
 | stride-analysis-patterns | stride-analysis-patterns | stride | 4 | wshobson/agents |
 | stripe-expert | stripe-expert | stripe | 4 | 0xfurai/claude-code-subagents |
 | stripe-integration | stripe-integration | stripe | 4 | wshobson/agents |
-| study-abroad-advisor | Study Abroad Advisor | study | 4 | original |
-| supply-chain-strategist | Supply Chain Strategist | supply | 4 | original |
-| support-analytics-reporter | Analytics Reporter | support | 3 | original |
-| support-executive-summary-generator | Executive Summary Generator | support | 3 | original |
-| support-finance-tracker | Finance Tracker | support | 3 | original |
-| support-infrastructure-maintainer | Infrastructure Maintainer | support | 3 | original |
-| support-legal-compliance-checker | Legal Compliance Checker | support | 3 | original |
-| support-support-responder | Support Responder | support | 3 | original |
+| study-abroad-advisor | Study Abroad Advisor | study | 4 | community |
+| supply-chain-strategist | Supply Chain Strategist | supply | 4 | community |
+| support-analytics-reporter | Analytics Reporter | support | 3 | community |
+| support-executive-summary-generator | Executive Summary Generator | support | 3 | community |
+| support-finance-tracker | Finance Tracker | support | 3 | community |
+| support-infrastructure-maintainer | Infrastructure Maintainer | support | 3 | community |
+| support-legal-compliance-checker | Legal Compliance Checker | support | 3 | community |
+| support-support-responder | Support Responder | support | 3 | community |
 | svelte-expert | svelte-expert | svelte | 4 | 0xfurai/claude-code-subagents |
 | swiftui-component-library | SwiftUI Component Library | swiftui | 4 | wshobson/agents |
 | swiftui-expert | swiftui-expert | swiftui | 4 | 0xfurai/claude-code-subagents |
@@ -683,21 +683,21 @@ Total: 735 agents (audited and deduplicated)
 | teams-team-implementer | team-implementer | teams | 4 | wshobson/agents |
 | teams-team-lead | team-lead | teams | 4 | wshobson/agents |
 | teams-team-reviewer | team-reviewer | teams | 4 | wshobson/agents |
-| technical-artist | Technical Artist | technical | 4 | original |
+| technical-artist | Technical Artist | technical | 4 | community |
 | technical-debt-analysis-and-remediation | Technical Debt Analysis and Remediation | technical | 4 | wshobson/agents |
 | technology-stack | Technology Stack | technology | 4 | wshobson/agents |
 | temporal-python-testing | temporal-python-testing | temporal | 4 | wshobson/agents |
 | tensorflow-expert | tensorflow-expert | tensorflow | 4 | 0xfurai/claude-code-subagents |
-| terminal-integration-specialist | Terminal Integration Specialist | terminal | 4 | original |
+| terminal-integration-specialist | Terminal Integration Specialist | terminal | 4 | community |
 | testcafe-expert | testcafe-expert | testcafe | 4 | 0xfurai/claude-code-subagents |
-| testing-accessibility-auditor | Accessibility Auditor | testing | 4 | original |
-| testing-api-tester | API Tester | testing | 4 | original |
-| testing-evidence-collector | Evidence Collector | testing | 4 | original |
-| testing-performance-benchmarker | Performance Benchmarker | testing | 4 | original |
-| testing-reality-checker | Reality Checker | testing | 4 | original |
-| testing-test-results-analyzer | Test Results Analyzer | testing | 4 | original |
-| testing-tool-evaluator | Tool Evaluator | testing | 4 | original |
-| testing-workflow-optimizer | Workflow Optimizer | testing | 4 | original |
+| testing-accessibility-auditor | Accessibility Auditor | testing | 4 | community |
+| testing-api-tester | API Tester | testing | 4 | community |
+| testing-evidence-collector | Evidence Collector | testing | 4 | community |
+| testing-performance-benchmarker | Performance Benchmarker | testing | 4 | community |
+| testing-reality-checker | Reality Checker | testing | 4 | community |
+| testing-test-results-analyzer | Test Results Analyzer | testing | 4 | community |
+| testing-tool-evaluator | Tool Evaluator | testing | 4 | community |
+| testing-workflow-optimizer | Workflow Optimizer | testing | 4 | community |
 | theming-architecture | Theming Architecture | theming | 4 | wshobson/agents |
 | threat-mitigation-mapping | threat-mitigation-mapping | threat | 4 | wshobson/agents |
 | toolkit-debugger | debugger | toolkit | 4 | wshobson/agents |
@@ -718,20 +718,20 @@ Total: 735 agents (audited and deduplicated)
 | typescript-style-guide | TypeScript Style Guide | typescript | 4 | wshobson/agents |
 | typography-systems-reference | Typography Systems Reference | typography | 4 | wshobson/agents |
 | unit-testing-temporal-workflows-and-activities | Unit Testing Temporal Workflows and Acti | unit | 4 | wshobson/agents |
-| unity-architect | Unity Architect | unity | 4 | original |
+| unity-architect | Unity Architect | unity | 4 | community |
 | unity-ecs-patterns | unity-ecs-patterns | unity | 4 | wshobson/agents |
-| unity-editor-tool-developer | Unity Editor Tool Developer | unity | 4 | original |
-| unity-multiplayer-engineer | Unity Multiplayer Engineer | unity | 4 | original |
-| unity-shader-graph-artist | Unity Shader Graph Artist | unity | 4 | original |
-| unreal-multiplayer-architect | Unreal Multiplayer Architect | unreal | 4 | original |
-| unreal-systems-engineer | Unreal Systems Engineer | unreal | 4 | original |
-| unreal-technical-artist | Unreal Technical Artist | unreal | 4 | original |
-| unreal-world-builder | Unreal World Builder | unreal | 4 | original |
+| unity-editor-tool-developer | Unity Editor Tool Developer | unity | 4 | community |
+| unity-multiplayer-engineer | Unity Multiplayer Engineer | unity | 4 | community |
+| unity-shader-graph-artist | Unity Shader Graph Artist | unity | 4 | community |
+| unreal-multiplayer-architect | Unreal Multiplayer Architect | unreal | 4 | community |
+| unreal-systems-engineer | Unreal Systems Engineer | unreal | 4 | community |
+| unreal-technical-artist | Unreal Technical Artist | unreal | 4 | community |
+| unreal-world-builder | Unreal World Builder | unreal | 4 | community |
 | usage-guide | Usage Guide | usage | 4 | wshobson/agents |
 | uv-package-manager | uv-package-manager | uv | 4 | wshobson/agents |
 | vector-db-expert | vector-db-expert | vector | 4 | 0xfurai/claude-code-subagents |
 | vector-index-tuning | vector-index-tuning | vector | 4 | wshobson/agents |
-| visionos-spatial-engineer | visionOS Spatial Engineer | visionos | 4 | original |
+| visionos-spatial-engineer | visionOS Spatial Engineer | visionos | 4 | community |
 | visual-design-foundations | visual-design-foundations | visual | 4 | wshobson/agents |
 | vitest-expert | vitest-expert | vitest | 4 | 0xfurai/claude-code-subagents |
 | wcag-2-2-guidelines-reference | WCAG 2.2 Guidelines Reference | wcag | 4 | wshobson/agents |
@@ -744,8 +744,8 @@ Total: 735 agents (audited and deduplicated)
 | workflow-automation | Workflow Automation | workflow | 4 | wshobson/agents |
 | workflow-orchestration-patterns | workflow-orchestration-patterns | workflow | 4 | wshobson/agents |
 | workflow-patterns | workflow-patterns | workflow | 4 | wshobson/agents |
-| xr-cockpit-interaction-specialist | XR Cockpit Interaction Specialist | xr | 4 | original |
-| xr-immersive-developer | XR Immersive Developer | xr | 4 | original |
-| xr-interface-architect | XR Interface Architect | xr | 4 | original |
+| xr-cockpit-interaction-specialist | XR Cockpit Interaction Specialist | xr | 4 | community |
+| xr-immersive-developer | XR Immersive Developer | xr | 4 | community |
+| xr-interface-architect | XR Interface Architect | xr | 4 | community |
 | xss-vulnerability-scanner-for-frontend-code | XSS Vulnerability Scanner for Frontend C | xss | 4 | wshobson/agents |
-| zk-steward | ZK Steward | zk | 4 | original |
+| zk-steward | ZK Steward | zk | 4 | community |
