@@ -70,6 +70,50 @@ jobs:
           files: dist/*
           generate_release_notes: true
 
+  notify-discord:
+    needs: github-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Extract changelog for this version
+        id: changelog
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          NOTES=$(sed -n "/## \[${VERSION}\]/,/## \[/p" CHANGELOG.md | head -n -1)
+          if [ -z "$NOTES" ]; then
+            NOTES="Release ${VERSION}"
+          fi
+          echo "NOTES<<EOF" >> $GITHUB_OUTPUT
+          echo "$NOTES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Post to Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          BODY=$(echo '${{ steps.changelog.outputs.NOTES }}' | head -c 1800)
+          PAYLOAD=$(jq -n \
+            --arg content "**BrainStormer v${VERSION}** released! :rocket:" \
+            --arg title "v${VERSION}" \
+            --arg desc "$BODY" \
+            --arg url "https://github.com/pnmcguire480/brainstormer/releases/tag/v${VERSION}" \
+            '{
+              content: $content,
+              embeds: [{
+                title: $title,
+                description: $desc,
+                url: $url,
+                color: 6366961
+              }]
+            }')
+          curl -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK"
+
   publish-pypi:
     needs: build
     runs-on: ubuntu-latest
