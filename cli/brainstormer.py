@@ -488,7 +488,8 @@ def _handle_error(e: Exception):
     # Always show where to get help
     print()
     print("  Run 'brainstormer doctor' to diagnose issues.")
-    print("  Report bugs: https://github.com/pnmcguire480/brainstormer/issues")
+    print("  Get help: https://discord.gg/vrFcju9rBA
+  Report bugs: https://github.com/pnmcguire480/brainstormer/issues")
 
 
 if __name__ == "__main__":

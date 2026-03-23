@@ -145,6 +145,11 @@ pip install -e .
 brainstormer help
 ```
 
+## Support
+
+- [Discord](https://discord.gg/vrFcju9rBA) — questions, bugs, feature requests
+- [GitHub Issues](https://github.com/pnmcguire480/brainstormer/issues) — bug reports
+
 ## License
 
 MIT — Patrick McGuire
