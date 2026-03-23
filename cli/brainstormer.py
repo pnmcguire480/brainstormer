@@ -52,18 +52,22 @@ BrainStormer — The AI Development Operating System
 Drop in. Init. Ship.
 
 Commands:
-  init          Set up BrainStormer in the current project
-  status        Show what's configured and what's missing
-  doctor        Validate setup, diagnose issues
-  sync          Push project state to Obsidian vault
-  update        Update BrainStormer and re-sync templates
-  migrate       Import .cursorrules, .windsurfrules, existing configs
-  quality run   Run PALADIN quality tiers 1-5
-  quality bootstrap  Install missing test infrastructure
-  agent list    Show available agents for this project
-  license       Show, activate, or deactivate your license
-  config        Get or set configuration values
-  help          Show this help or command-specific help
+  init              Set up BrainStormer in the current project
+  status            Show what's configured and what's missing
+  doctor            Validate setup, diagnose issues
+  sync              Push project state to Obsidian vault
+  update            Update BrainStormer and re-sync templates
+  update check      Check for new releases
+  update channel    View or set release channel (stable/preview)
+  update rollback   Show how to revert to previous version
+  migrate           Import .cursorrules, .windsurfrules, existing configs
+  quality run       Run PALADIN quality tiers 1-5
+  quality bootstrap Install missing test infrastructure
+  agent list        Show available agents for this project
+  license           Show, activate, or deactivate your license
+  telemetry         View or toggle anonymous usage telemetry
+  config            Get or set configuration values
+  help              Show this help or command-specific help
 
 Options:
   --name NAME       Set project name explicitly (default: folder name)
@@ -156,6 +160,33 @@ Tiers:
   Team               Pro + shared configs, team agent library
   Enterprise         SSO, audit logging, air-gapped, custom agents
 """,
+    "update": """
+brainstormer update — Update BrainStormer and re-sync templates
+
+Subcommands:
+  brainstormer update                Check templates + new releases
+  brainstormer update check          Check for new releases only
+  brainstormer update channel        View current release channel
+  brainstormer update channel stable  Set channel to stable (weekly GA)
+  brainstormer update channel preview Set channel to preview (next-week builds)
+  brainstormer update rollback       Show how to revert to previous version
+""",
+    "telemetry": """
+brainstormer telemetry — Manage anonymous usage telemetry
+
+Usage:
+  brainstormer telemetry             Show current status
+  brainstormer telemetry on          Enable anonymous telemetry
+  brainstormer telemetry off         Disable and delete stored events
+
+Telemetry is OFF by default. When enabled, collects:
+  - Command names (e.g., "init", "status")
+  - Success/failure and error types
+  - OS, Python version, BrainStormer version
+  - Anonymous machine ID
+
+NEVER collects: code, file contents, paths, API keys, or project names.
+""",
     "agent": """
 brainstormer agent list — Show available agents for this project
 
@@ -188,6 +219,9 @@ def parse_args(argv):
         argv = argv[2:]
     elif command == "license":
         # license keeps its subcommand as a positional arg
+        argv = argv[1:]
+    elif command == "telemetry":
+        # telemetry keeps its subcommand as a positional arg
         argv = argv[1:]
     else:
         argv = argv[1:]
@@ -250,6 +284,7 @@ def run(argv=None):
         "update": cmd_update,
         "migrate": cmd_migrate,
         "license": cmd_license,
+        "telemetry": lambda opts: _cmd_telemetry(opts),
         "agent-list": lambda opts: _cmd_agent_list(opts),
     }
 
@@ -338,13 +373,88 @@ def _cmd_agent_list(opts: dict) -> int:
     return 0
 
 
+def _cmd_telemetry(opts: dict) -> int:
+    """Handle telemetry subcommands."""
+    try:
+        from core.telemetry import (
+            is_enabled, opt_in, opt_out, format_telemetry_status, flush_events,
+        )
+    except ImportError:
+        from cli.core.telemetry import (
+            is_enabled, opt_in, opt_out, format_telemetry_status, flush_events,
+        )
+
+    positional = opts.get("positional", [])
+
+    if not positional:
+        print()
+        print("  BrainStormer Telemetry")
+        print("  " + "=" * 50)
+        print()
+        print(format_telemetry_status())
+        print()
+        return 0
+
+    action = positional[0]
+
+    if action == "on":
+        opt_in()
+        print("\n  Telemetry enabled. Thank you for helping improve BrainStormer!")
+        print("  Only anonymous usage data is collected. Never code or file contents.")
+        print("  Disable anytime: brainstormer telemetry off\n")
+        return 0
+
+    if action == "off":
+        opt_out()
+        print("\n  Telemetry disabled. All stored events deleted.\n")
+        return 0
+
+    if action == "flush":
+        count = flush_events()
+        print(f"\n  Sent {count} events.\n")
+        return 0
+
+    print("\n  Usage:")
+    print("    brainstormer telemetry        Show status")
+    print("    brainstormer telemetry on     Enable")
+    print("    brainstormer telemetry off    Disable\n")
+    return 1
+
+
 def main():
     try:
-        sys.exit(run())
+        result = run()
+
+        # Record telemetry (non-blocking, silently fails)
+        try:
+            from core.telemetry import record_event
+        except ImportError:
+            try:
+                from cli.core.telemetry import record_event
+            except ImportError:
+                record_event = None
+
+        if record_event and len(sys.argv) > 1:
+            cmd = sys.argv[1]
+            record_event(cmd, success=(result == 0))
+
+        sys.exit(result)
     except KeyboardInterrupt:
         print("\n  Cancelled.")
         sys.exit(130)
     except Exception as e:
+        # Record error telemetry
+        try:
+            from core.telemetry import record_event
+        except ImportError:
+            try:
+                from cli.core.telemetry import record_event
+            except ImportError:
+                record_event = None
+
+        if record_event and len(sys.argv) > 1:
+            record_event(sys.argv[1], success=False, error_type=type(e).__name__)
+
         _handle_error(e)
         sys.exit(1)
 
@@ -378,7 +488,7 @@ def _handle_error(e: Exception):
     # Always show where to get help
     print()
     print("  Run 'brainstormer doctor' to diagnose issues.")
-    print("  Report bugs: https://github.com/brainstormer-dev/brainstormer/issues")
+    print("  Report bugs: https://github.com/pnmcguire480/brainstormer/issues")
 
 
 if __name__ == "__main__":

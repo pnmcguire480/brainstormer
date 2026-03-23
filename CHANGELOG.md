@@ -7,6 +7,20 @@ Version scheme: `YYYY.WW.patch` (year.week.patch).
 
 ## [Unreleased]
 
+## [2026.12.2] - 2026-03-22
+
+### Added
+- Release channels: `brainstormer update channel stable|preview` for choosing release track
+- Update rollback: `brainstormer update rollback` shows how to revert via pip
+- Update check: `brainstormer update check` queries GitHub for newer releases
+- Opt-in telemetry: `brainstormer telemetry on|off` with anonymous usage events
+- Telemetry records command names, success/failure, OS, version — never code or file contents
+- User-level config at `~/.brainstormer/config.json` for channel and telemetry preferences
+
+### Fixed
+- Agent source attribution: 156 agents re-tagged from "original" to "community"
+- Bug report URL in error handler now points to correct GitHub repo
+
 ## [2026.12.1] - 2026-03-22
 
 ### Added
