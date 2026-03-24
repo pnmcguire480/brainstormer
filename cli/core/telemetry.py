@@ -207,6 +207,69 @@ def flush_events() -> int:
         return 0  # Silently fail
 
 
+def get_insights() -> dict:
+    """Analyze stored telemetry data for personal insights.
+
+    Returns dict with usage patterns, most-used commands, etc.
+    This is LOCAL analysis only — data never leaves the machine.
+    """
+    telemetry_dir = get_telemetry_path()
+    if not telemetry_dir.exists():
+        return {}
+
+    events = []
+    for f in sorted(telemetry_dir.glob("*.jsonl")):
+        try:
+            for line in f.read_text(encoding="utf-8").splitlines():
+                line = line.strip()
+                if line:
+                    events.append(json.loads(line))
+        except (json.JSONDecodeError, OSError):
+            continue
+
+    if not events:
+        return {}
+
+    # Analyze
+    cmd_counts = {}
+    error_counts = {}
+    daily_counts = {}
+    success_count = 0
+    fail_count = 0
+
+    for e in events:
+        cmd = e.get("cmd", "unknown")
+        cmd_counts[cmd] = cmd_counts.get(cmd, 0) + 1
+
+        if e.get("ok"):
+            success_count += 1
+        else:
+            fail_count += 1
+            err = e.get("err", "unknown")
+            error_counts[err] = error_counts.get(err, 0) + 1
+
+        ts = e.get("ts", "")
+        day = ts[:10] if ts else "unknown"
+        daily_counts[day] = daily_counts.get(day, 0) + 1
+
+    # Sort
+    top_commands = sorted(cmd_counts.items(), key=lambda x: -x[1])
+    top_errors = sorted(error_counts.items(), key=lambda x: -x[1])
+    busiest_days = sorted(daily_counts.items(), key=lambda x: -x[1])
+
+    return {
+        "total_events": len(events),
+        "success_count": success_count,
+        "fail_count": fail_count,
+        "success_rate": success_count / len(events) if events else 0,
+        "top_commands": top_commands[:10],
+        "top_errors": top_errors[:5],
+        "busiest_days": busiest_days[:5],
+        "days_active": len(daily_counts),
+        "avg_per_day": len(events) / max(len(daily_counts), 1),
+    }
+
+
 def format_telemetry_status() -> str:
     """Format telemetry status for display."""
     enabled = is_enabled()

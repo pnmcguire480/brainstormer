@@ -1,0 +1,20 @@
+# Example GitHub Actions workflow using PALADIN quality gate
+# Copy to .github/workflows/paladin.yml in your project
+
+name: PALADIN Quality Gate
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: PALADIN Quality Check
+        uses: pnmcguire480/brainstormer@v1
+        with:
+          tier-threshold: '3'    # Fail if below tier 3
+          strict: 'false'        # Set true to treat warnings as errors
+          # skip-tiers: '4,5'   # Uncomment to skip visual/performance tiers

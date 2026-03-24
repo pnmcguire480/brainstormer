@@ -10,6 +10,7 @@ Usage:
     brainstormer quality run
     brainstormer quality bootstrap [--dry-run]
     brainstormer agent list [--all]
+    brainstormer learn [rule|walkthrough|scan|status]
     brainstormer config set <key> <value>
     brainstormer config get <key>
     brainstormer help [<command>]
@@ -36,6 +37,11 @@ try:
     from cli.commands.update import cmd_update
     from cli.commands.migrate import cmd_migrate
     from cli.commands.license_cmd import cmd_license
+    from cli.commands.learn import cmd_learn
+    from cli.commands.summary import cmd_summary
+    from cli.commands.agent import cmd_agent
+    from cli.commands.hooks import cmd_hooks
+    from cli.commands.team import cmd_team
 except ImportError:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from commands.init import cmd_init
@@ -45,6 +51,11 @@ except ImportError:
     from commands.update import cmd_update
     from commands.migrate import cmd_migrate
     from commands.license_cmd import cmd_license
+    from commands.learn import cmd_learn
+    from commands.summary import cmd_summary
+    from commands.agent import cmd_agent
+    from commands.hooks import cmd_hooks
+    from commands.team import cmd_team
 
 
 HELP_TEXT = """
@@ -64,7 +75,15 @@ Commands:
   quality run       Run PALADIN quality tiers 1-5
   quality bootstrap Install missing test infrastructure
   agent list        Show available agents for this project
+  agent create      Scaffold a new custom agent
+  agent test        Validate an agent file
+  agent info        Show agent details
+  agent run         Run an agent pipeline (YAML)
   license           Show, activate, or deactivate your license
+  learn             Auto-learn: rules from diffs, pattern detection, confidence tracking
+  summary           Auto-generate daily journal in Obsidian with keyword linking
+  hooks             Install git hooks (PALADIN pre-commit, auto-learn post-commit)
+  team              Team rulesets, rule templates, and shared configuration
   telemetry         View or toggle anonymous usage telemetry
   config            Get or set configuration values
   help              Show this help or command-specific help
@@ -187,14 +206,76 @@ Telemetry is OFF by default. When enabled, collects:
 
 NEVER collects: code, file contents, paths, API keys, or project names.
 """,
+    "learn": """
+brainstormer learn — Capture knowledge from coding sessions
+
+The write side of the auto-research loop. Every correction, lesson, and
+walkthrough gets deposited so the next session starts smarter.
+
+Subcommands:
+  brainstormer learn              Show knowledge status (global + project rules)
+  brainstormer learn rule         Add a rule interactively (to project)
+  brainstormer learn rule --global        Add a rule to global rules (~/.brainstormer/)
+  brainstormer learn rule --from-diff HEAD~1  Auto-propose rules from git diff
+  brainstormer learn walkthrough          Create a walkthrough template
+  brainstormer learn walkthrough --from-diff HEAD~1  Generate walkthrough from diff
+  brainstormer learn scan                 Import rules/walkthroughs from Obsidian vault
+  brainstormer learn scan --detect        Detect recurring patterns from recent commits
+  brainstormer learn prune                Flag stale or low-confidence rules
+  brainstormer learn status               Same as 'brainstormer learn' (default)
+
+Global rules (~/.brainstormer/rules.md) apply to ALL projects.
+Project rules (./rules.md) can override global rules by name.
+
+The compounding loop:
+  Code → Diff analyzed → Rules auto-proposed → Confidence tracked
+  → Stale rules pruned → Patterns detected → Knowledge compounds
+""",
+    "summary": """
+brainstormer summary — Auto-generated daily journal in Obsidian
+
+Captures session summaries with auto-linked keywords organized by date.
+Zero-effort mode with Claude Code stop hook.
+
+Subcommands:
+  brainstormer summary              Generate a summary for this session
+  brainstormer summary --auto       Fully automatic (for Claude Code hooks)
+  brainstormer summary rollup       Generate today's daily rollup
+  brainstormer summary status       Show summary journal stats
+
+Hook setup (zero effort):
+  Add to .claude/settings.json:
+  { "hooks": { "stop": [{ "command": "brainstormer summary --auto" }] } }
+
+Keywords are auto-linked from 6 sources:
+  Projects, Skills, Commands, Concepts, People, Vault notes
+""",
     "agent": """
-brainstormer agent list — Show available agents for this project
+brainstormer agent — Agent management
 
-Detects your project stack and shows the most relevant agents.
-Use --all to see the full catalog of 735+ agents.
+Subcommands:
+  brainstormer agent list [--all]       Show available agents (stack-filtered)
+  brainstormer agent create <name>      Scaffold a new custom agent
+  brainstormer agent test <name>        Validate agent frontmatter and content
+  brainstormer agent info <name>        Show agent details
+  brainstormer agent run <pipeline.yml> Run a multi-agent pipeline
 
-Options:
-  --all               Show all agents, not just stack-relevant ones
+Agent Builder SDK:
+  1. brainstormer agent create my-reviewer   — scaffold agent + test file
+  2. Edit ~/.claude/agents/my-reviewer.md    — customize instructions
+  3. brainstormer agent test my-reviewer     — validate
+  4. Use in Claude Code as a subagent
+
+Agent Pipelines:
+  Define multi-agent workflows in YAML:
+    name: security-review
+    steps:
+      - agent: security-engineer
+        output: security_report
+      - agent: test-automator
+        input: security_report
+        output: test_plan
+  Run: brainstormer agent run security-review.yml
 """,
 }
 
@@ -212,13 +293,31 @@ def parse_args(argv):
         command = f"quality-{argv[1]}"
         argv = argv[2:]
     elif command == "agent" and len(argv) > 1:
-        command = f"agent-{argv[1]}"
-        argv = argv[2:]
+        subcmd = argv[1]
+        if subcmd in ("create", "test", "info", "run", "publish", "search"):
+            # Route to new agent command module with subcommand as positional
+            command = "agent"
+            argv = argv[1:]  # keep subcommand + args as positional
+        else:
+            command = f"agent-{subcmd}"
+            argv = argv[2:]
     elif command == "config" and len(argv) > 1:
         command = f"config-{argv[1]}"
         argv = argv[2:]
     elif command == "license":
         # license keeps its subcommand as a positional arg
+        argv = argv[1:]
+    elif command == "learn":
+        # learn keeps its subcommand as a positional arg
+        argv = argv[1:]
+    elif command == "summary":
+        # summary keeps its subcommand as a positional arg
+        argv = argv[1:]
+    elif command == "hooks":
+        # hooks keeps its subcommand as a positional arg
+        argv = argv[1:]
+    elif command == "team":
+        # team keeps its subcommand as a positional arg
         argv = argv[1:]
     elif command == "telemetry":
         # telemetry keeps its subcommand as a positional arg
@@ -284,6 +383,11 @@ def run(argv=None):
         "update": cmd_update,
         "migrate": cmd_migrate,
         "license": cmd_license,
+        "learn": cmd_learn,
+        "summary": cmd_summary,
+        "agent": cmd_agent,
+        "hooks": cmd_hooks,
+        "team": cmd_team,
         "telemetry": lambda opts: _cmd_telemetry(opts),
         "agent-list": lambda opts: _cmd_agent_list(opts),
     }
@@ -414,11 +518,66 @@ def _cmd_telemetry(opts: dict) -> int:
         print(f"\n  Sent {count} events.\n")
         return 0
 
+    if action == "insights":
+        return _cmd_telemetry_insights()
+
     print("\n  Usage:")
-    print("    brainstormer telemetry        Show status")
-    print("    brainstormer telemetry on     Enable")
-    print("    brainstormer telemetry off    Disable\n")
+    print("    brainstormer telemetry           Show status")
+    print("    brainstormer telemetry on        Enable")
+    print("    brainstormer telemetry off       Disable")
+    print("    brainstormer telemetry insights  Personal usage insights\n")
     return 1
+
+
+def _cmd_telemetry_insights() -> int:
+    """Show personal usage insights from telemetry data."""
+    try:
+        from core.telemetry import get_insights, is_enabled
+    except ImportError:
+        from cli.core.telemetry import get_insights, is_enabled
+
+    if not is_enabled():
+        print("\n  Telemetry is disabled. Enable first: brainstormer telemetry on\n")
+        return 0
+
+    insights = get_insights()
+    if not insights:
+        print("\n  No telemetry data yet. Use BrainStormer for a while first.\n")
+        return 0
+
+    print()
+    print("  BrainStormer — Personal Usage Insights")
+    print("  " + "=" * 50)
+    print()
+    print(f"  Total commands:  {insights['total_events']}")
+    print(f"  Success rate:    {insights['success_rate']:.0%}")
+    print(f"  Days active:     {insights['days_active']}")
+    print(f"  Avg per day:     {insights['avg_per_day']:.1f}")
+    print()
+
+    if insights.get("top_commands"):
+        print("  Most used commands:")
+        for cmd, count in insights["top_commands"]:
+            bar = "#" * min(count, 30)
+            print(f"    {cmd:<15s} {count:>4d}  {bar}")
+        print()
+
+    if insights.get("top_errors"):
+        print("  Common errors:")
+        for err, count in insights["top_errors"]:
+            print(f"    {err:<25s} {count}x")
+        print()
+
+    if insights.get("busiest_days"):
+        print("  Busiest days:")
+        for day, count in insights["busiest_days"]:
+            print(f"    {day}  {count} commands")
+        print()
+
+    # Privacy note
+    print("  All data is LOCAL. Nothing is sent unless you run 'telemetry flush'.")
+    print()
+    return 0
 
 
 def main():
@@ -488,8 +647,8 @@ def _handle_error(e: Exception):
     # Always show where to get help
     print()
     print("  Run 'brainstormer doctor' to diagnose issues.")
-    print("  Get help: https://discord.gg/vrFcju9rBA
-  Report bugs: https://github.com/pnmcguire480/brainstormer/issues")
+    print("  Get help: https://discord.gg/vrFcju9rBA")
+    print("  Report bugs: https://github.com/pnmcguire480/brainstormer/issues")
 
 
 if __name__ == "__main__":

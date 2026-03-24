@@ -60,6 +60,22 @@ The child doesn't know what the function does — it just signals "I'm done."
 Analogy: "The child rings a bell. The parent decides what to do when they hear it."
 Where you'll see it: forms, modals, any child that triggers parent updates.
 
+### **Data-Driven Form**
+Define form fields as typed data objects (`FieldDef[]`). A generic renderer maps field
+definitions to UI components at runtime. Validation schemas are built dynamically from
+field metadata (see Rule: Dynamic Schema Generation).
+```tsx
+// Define fields as data
+const fields: FieldDef[] = [
+  { name: "company", type: "text", label: "Company Name", required: true },
+  { name: "industry", type: "select", label: "Industry", options: [...] },
+]
+// Renderer turns data into UI — adding a field is a data change, not a component change
+<FormRenderer fields={fields} />
+```
+Analogy: "A menu that generates its own kitchen orders. Change the menu, the kitchen adapts."
+Where you'll see it: intake forms, dynamic surveys, configurable wizards.
+
 ### **Data Journey**
 Not a code pattern but a tracing technique. Follow data from user action → function →
 API/database → response → screen update. Every CodeGlass walkthrough has one.

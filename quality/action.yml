@@ -1,0 +1,145 @@
+name: 'PALADIN Quality Gate'
+description: 'Run BrainStormer PALADIN quality tiers on your PR'
+author: 'pnmcguire480'
+branding:
+  icon: 'shield'
+  color: 'purple'
+
+inputs:
+  tier-threshold:
+    description: 'Minimum tier that must pass (1-5, default: 3)'
+    required: false
+    default: '3'
+  strict:
+    description: 'Treat warnings as errors (default: false)'
+    required: false
+    default: 'false'
+  skip-tiers:
+    description: 'Comma-separated tier numbers to skip (e.g., "4,5")'
+    required: false
+    default: ''
+  config-path:
+    description: 'Path to paladin.config.json (default: auto-detect)'
+    required: false
+    default: ''
+  python-version:
+    description: 'Python version to use (default: 3.11)'
+    required: false
+    default: '3.11'
+
+outputs:
+  verdict:
+    description: 'PALADIN verdict: PASS, WARN, or FAIL'
+  tier-reached:
+    description: 'Highest tier that passed'
+  issues-count:
+    description: 'Total number of issues found'
+  report-path:
+    description: 'Path to the generated PALADIN report'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Install BrainStormer
+      shell: bash
+      run: |
+        pip install brainstormer --quiet 2>/dev/null || pip install -e . --quiet
+
+    - name: Run PALADIN
+      id: paladin
+      shell: bash
+      run: |
+        PALADIN_ARGS=""
+
+        if [ "${{ inputs.strict }}" = "true" ]; then
+          PALADIN_ARGS="$PALADIN_ARGS --strict"
+        fi
+
+        if [ -n "${{ inputs.skip-tiers }}" ]; then
+          PALADIN_ARGS="$PALADIN_ARGS --skip=${{ inputs.skip-tiers }}"
+        fi
+
+        if [ -n "${{ inputs.config-path }}" ]; then
+          export PALADIN_CONFIG="${{ inputs.config-path }}"
+        fi
+
+        PALADIN_ARGS="$PALADIN_ARGS --report"
+
+        # Run PALADIN and capture output
+        SCRIPT_DIR="$(python -c 'import cli.core.scaffold as s; print(s.get_brainstormer_root())' 2>/dev/null)/quality/scripts"
+
+        if [ -f "$SCRIPT_DIR/paladin-run.sh" ]; then
+          RESULT=$(bash "$SCRIPT_DIR/paladin-run.sh" $PALADIN_ARGS 2>&1) || true
+        else
+          # Fallback: run brainstormer quality run
+          RESULT=$(brainstormer quality run 2>&1) || true
+        fi
+
+        echo "$RESULT"
+
+        # Parse verdict
+        VERDICT=$(echo "$RESULT" | grep -oP 'PALADIN VERDICT: \K\w+' || echo "UNKNOWN")
+        echo "verdict=$VERDICT" >> $GITHUB_OUTPUT
+
+        # Parse tier reached
+        TIER_REACHED=0
+        for i in 1 2 3 4 5; do
+          if echo "$RESULT" | grep -q "Tier $i.*PASS"; then
+            TIER_REACHED=$i
+          fi
+        done
+        echo "tier-reached=$TIER_REACHED" >> $GITHUB_OUTPUT
+
+        # Parse issue count
+        ISSUES=$(echo "$RESULT" | grep -oP 'Issues: \K\d+' || echo "0")
+        echo "issues-count=$ISSUES" >> $GITHUB_OUTPUT
+
+        # Find report
+        REPORT_PATH=$(find paladin-reports -name "*.md" -type f 2>/dev/null | head -1 || echo "")
+        echo "report-path=$REPORT_PATH" >> $GITHUB_OUTPUT
+
+    - name: Check threshold
+      shell: bash
+      run: |
+        TIER_REACHED=${{ steps.paladin.outputs.tier-reached }}
+        THRESHOLD=${{ inputs.tier-threshold }}
+        VERDICT=${{ steps.paladin.outputs.verdict }}
+
+        echo "## PALADIN Quality Gate" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+        if [ "$VERDICT" = "FAIL" ]; then
+          echo "❌ **VERDICT: FAIL**" >> $GITHUB_STEP_SUMMARY
+        elif [ "$VERDICT" = "WARN" ]; then
+          echo "⚠️ **VERDICT: WARN**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "✅ **VERDICT: PASS**" >> $GITHUB_STEP_SUMMARY
+        fi
+
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- Tier reached: **$TIER_REACHED** / 5" >> $GITHUB_STEP_SUMMARY
+        echo "- Threshold: **$THRESHOLD**" >> $GITHUB_STEP_SUMMARY
+        echo "- Issues: **${{ steps.paladin.outputs.issues-count }}**" >> $GITHUB_STEP_SUMMARY
+
+        if [ "$TIER_REACHED" -lt "$THRESHOLD" ]; then
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "❌ Failed: Tier $TIER_REACHED < threshold $THRESHOLD" >> $GITHUB_STEP_SUMMARY
+          echo "::error::PALADIN: Tier $TIER_REACHED did not meet threshold $THRESHOLD"
+          exit 1
+        fi
+
+    - name: Post report as comment
+      if: github.event_name == 'pull_request' && steps.paladin.outputs.report-path != ''
+      shell: bash
+      run: |
+        REPORT="${{ steps.paladin.outputs.report-path }}"
+        if [ -f "$REPORT" ]; then
+          # Truncate if too long for PR comment
+          CONTENT=$(head -c 60000 "$REPORT")
+          echo "::notice::PALADIN report available at $REPORT"
+        fi

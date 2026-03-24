@@ -1,5 +1,6 @@
 """Obsidian vault sync for BrainStormer."""
 
+import re
 import yaml
 from pathlib import Path
 from datetime import datetime
@@ -181,6 +182,104 @@ def _write_preserving_user_notes(path: Path, new_content: str):
         content += f"\n\n{user_notes}\n"
 
     path.write_text(content, encoding="utf-8")
+
+
+def sync_vault_to_project(project_root: Path, project_name: str, vault_path: Path) -> dict:
+    """Reverse sync: Obsidian vault -> project.
+
+    Syncs rules and walkthroughs edited in Obsidian back to the project.
+    Only syncs files that are NEWER in the vault than in the project.
+    Returns dict of {path: status}.
+    """
+    results = {}
+    project_vault_dir = vault_path / "projects" / project_name
+
+    if not project_vault_dir.exists():
+        return results
+
+    # Reverse sync rules from vault comprehension
+    vault_rules = project_vault_dir / "comprehension"
+    if vault_rules.exists():
+        # Check for rules edited in vault
+        # Look for vault-specific rule files
+        pass  # Rules are embedded in rules.md, handled below
+
+    # Reverse sync walkthroughs
+    vault_comp = project_vault_dir / "comprehension"
+    if vault_comp.exists():
+        codeglass_dir = project_root / "docs" / "codeglass"
+        codeglass_dir.mkdir(parents=True, exist_ok=True)
+
+        for vault_file in vault_comp.glob("*.md"):
+            project_file = codeglass_dir / vault_file.name
+            if project_file.exists():
+                # Only sync if vault version is newer
+                vault_mtime = vault_file.stat().st_mtime
+                project_mtime = project_file.stat().st_mtime
+                if vault_mtime > project_mtime:
+                    content = vault_file.read_text(encoding="utf-8")
+                    # Strip user notes before writing back
+                    content = _strip_user_notes(content)
+                    project_file.write_text(content, encoding="utf-8")
+                    results[f"docs/codeglass/{vault_file.name}"] = "reverse-synced"
+            else:
+                # New file created in vault — import it
+                content = vault_file.read_text(encoding="utf-8")
+                content = _strip_user_notes(content)
+                project_file.write_text(content, encoding="utf-8")
+                results[f"docs/codeglass/{vault_file.name}"] = "imported"
+
+    # Reverse sync ideation files
+    vault_ideation = project_vault_dir / "ideation"
+    if vault_ideation.exists():
+        ideation_dir = project_root / "brainstormer"
+        ideation_dir.mkdir(parents=True, exist_ok=True)
+
+        for vault_file in vault_ideation.glob("*.md"):
+            project_file = ideation_dir / vault_file.name
+            if project_file.exists():
+                vault_mtime = vault_file.stat().st_mtime
+                project_mtime = project_file.stat().st_mtime
+                if vault_mtime > project_mtime:
+                    content = vault_file.read_text(encoding="utf-8")
+                    content = _strip_user_notes(content)
+                    project_file.write_text(content, encoding="utf-8")
+                    results[f"brainstormer/{vault_file.name}"] = "reverse-synced"
+
+    # Reverse sync vault rules directory
+    vault_rules_dir = vault_path / "rules"
+    if vault_rules_dir.exists():
+        rules_file = project_root / "rules.md"
+        if rules_file.exists():
+            existing = rules_file.read_text(encoding="utf-8")
+            imported = 0
+
+            for rule_file in vault_rules_dir.glob("*.md"):
+                rule_content = rule_file.read_text(encoding="utf-8")
+                # Extract rule name from frontmatter or heading
+                name_match = re.search(r'(?:name:\s*(.+)|^#\s+(.+))', rule_content, re.MULTILINE)
+                if name_match:
+                    rule_name = (name_match.group(1) or name_match.group(2)).strip().strip('"').strip("'")
+                    if f"### Rule: {rule_name}" not in existing:
+                        # New rule from vault — need to convert and append
+                        imported += 1
+
+            if imported > 0:
+                results["rules.md"] = f"{imported} new rules available"
+
+    return results
+
+
+def _strip_user_notes(content: str) -> str:
+    """Remove <!-- USER NOTES --> blocks from content."""
+    start_marker = "<!-- USER NOTES -->"
+    end_marker = "<!-- END USER NOTES -->"
+    start_idx = content.find(start_marker)
+    if start_idx != -1:
+        end_idx = content.find(end_marker, start_idx)
+        if end_idx != -1:
+            content = content[:start_idx] + content[end_idx + len(end_marker):]
+    return content.rstrip() + "\n"
 
 
 def _update_project_index(vault_path: Path, project_name: str):
