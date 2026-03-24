@@ -1,0 +1,376 @@
+# BrainStormer Agent Catalog — 2026-03-24T02:01:13.572787
+# Total: 373 agents
+
+.net-framework.md                                  | .NET Framework                      | languages/dotnet | 🏛️
+.net.md                                            | .NET                                | languages/dotnet | 🟦
+accessibility.md                                   | Accessibility                       | Accessibility   | ♿
+account-strategist.md                              | Account Strategist                  | Sales           | 🏦
+accounts-payable.md                                | Accounts Payable                    | Regional/Industry | 💸
+ad-security.md                                     | AD Security                         | security        | 🏰
+agent-organizer.md                                 | Agent Organizer                     | Meta & Orchestration | 🗂️
+ai-assistant.md                                    | AI Assistant                        | AI & ML         | 💬
+ai-citation-strategist.md                          | AI Citation Strategist              | Marketing & SEO | 🤖
+ai-engineer.md                                     | AI Engineer                         | AI & ML         | 🧠
+airflow.md                                         | Airflow                             | Data Engineering | 🌊
+analytics-reporter.md                              | Analytics Reporter                  | Business Operations | 📉
+android.md                                         | Android                             | mobile          | 🤖
+angular.md                                         | Angular                             | frontend        | 🔺
+ansible.md                                         | Ansible                             | iac             | 🤖
+anthropologist.md                                  | Anthropologist                      | worldbuilding   | 🏺
+api-documentation.md                               | API Documentation                   | backend-apis    | 📖
+app-store-optimizer.md                             | App Store Optimizer                 | Marketing & SEO | 📲
+architecture-patterns.md                           | Architecture Patterns               | Architecture & Patterns | 🧩
+asp.net-core.md                                    | ASP.NET Core                        | languages/dotnet | 🌐
+astro.md                                           | Astro                               | frontend        | 🚀
+auth-patterns.md                                   | Auth Patterns                       | security        | 🔑
+automation-governance.md                           | Automation Governance               | Regional/Industry | ⚙️
+aws-messaging.md                                   | AWS Messaging                       | Data Engineering | ☁️
+azure.md                                           | Azure                               | cloud           | 🔷
+baidu-seo.md                                       | Baidu SEO                           | Marketing & SEO | 🇨🇳
+bash.md                                            | Bash                                | Scripting       | 🐚
+bats.md                                            | BATS                                | testing-qa      | 🦇
+bazel.md                                           | Bazel                               | Developer Tools | 🏛️
+behavioral-nudge.md                                | Behavioral Nudge                    | Niche & Specialized | 🎯
+bilibili.md                                        | Bilibili                            | China Market    | 📺
+billing-automation.md                              | Billing Automation                  | Business Operations | 🧾
+blender.md                                         | Blender                             | Niche & Specialized | 🎭
+blockchain-developer.md                            | Blockchain Developer                | Web3 & Blockchain | ⛓️
+book-author.md                                     | Book Author                         | Marketing & SEO | 📚
+brand-design.md                                    | Brand Design                        | Design & UX     | ✨
+build-tools.md                                     | Build Tools                         | Developer Tools | 🔨
+bullmq.md                                          | BullMQ                              | backend-apis    | 🐂
+bun.md                                             | Bun                                 | backend-apis    | 🍞
+business-analyst.md                                | Business Analyst                    | Business Operations | 📈
+c#.md                                              | C#                                  | languages/dotnet | 🔷
+c++.md                                             | C++                                 | languages/systems | ⚡
+c.md                                               | C                                   | languages/systems | ⚙️
+c4-documentation.md                                | C4 Documentation                    | Documentation   | 📐
+carousel-engine.md                                 | Carousel Engine                     | Marketing & SEO | 🎠
+carousel-growth.md                                 | Carousel Growth                     | Niche & Specialized | 🎠
+cassandra.md                                       | Cassandra                           | Databases       | 👁️
+celery.md                                          | Celery                              | python          | 🥬
+changelog.md                                       | Changelog                           | Developer Tools | 📋
+chaos-engineering.md                               | Chaos Engineering                   | monitoring-sre  | 🐒
+china-e-commerce.md                                | China E-Commerce                    | China Market    | 🏪
+circleci.md                                        | CircleCI                            | ci-cd           | 🔄
+cli-development.md                                 | CLI Development                     | Developer Tools | 💻
+clojure.md                                         | Clojure                             | languages/jvm   | 🟢
+cloud-architect.md                                 | Cloud Architect                     | cloud           | ☁️
+cloud-cost-optimization.md                         | Cloud Cost Optimization             | cloud           | 💰
+cockroachdb.md                                     | CockroachDB                         | Databases       | 🪳
+code-review.md                                     | Code Review                         | testing-qa      | 👀
+code-style.md                                      | Code Style                          | Code Quality    | 📏
+competitive-analysis.md                            | Competitive Analysis                | Business Operations | 🔭
+competitive-researcher.md                          | Competitive Researcher              | Research        | 🏁
+content-marketing.md                               | Content Marketing                   | Marketing & SEO | 📰
+context-management.md                              | Context Management                  | AI & ML         | 🪟
+corporate-training.md                              | Corporate Training                  | Business Operations | 🎓
+cqrs.md                                            | CQRS                                | Architecture & Patterns | ⚖️
+cross-border-e-commerce.md                         | Cross-Border E-Commerce             | China Market    | 🌍
+css.md                                             | CSS                                 | frontend        | 🎨
+cultural-intelligence.md                           | Cultural Intelligence               | Niche & Specialized | 🌍
+customer-success.md                                | Customer Success                    | Business Operations | 🤝
+cypress.md                                         | Cypress                             | testing-qa      | 🌲
+dart.md                                            | Dart                                | languages/other | 🎯
+data-engineer.md                                   | Data Engineer                       | Data Engineering | 🏗️
+data-quality.md                                    | Data Quality                        | Data Engineering | ✅
+data-researcher.md                                 | Data Researcher                     | Research        | 🗃️
+data-science.md                                    | Data Science                        | AI & ML         | 📈
+data-storytelling.md                               | Data Storytelling                   | Business Operations | 📖
+database-admin.md                                  | Database Admin                      | SQL & ORM       | 🛡️
+database-migration.md                              | Database Migration                  | SQL & ORM       | 🔄
+dbt.md                                             | dbt                                 | Data Engineering | 🔧
+deal-strategist.md                                 | Deal Strategist                     | Sales           | 🎯
+debugging.md                                       | Debugging                           | Developer Tools | 🔍
+defi-protocols.md                                  | DeFi Protocols                      | Web3 & Blockchain | 🏦
+deno.md                                            | Deno                                | backend-apis    | 🦕
+dependency-management.md                           | Dependency Management               | Developer Tools | 🔐
+deployment-engineer.md                             | Deployment Engineer                 | ci-cd           | 🚀
+design-systems.md                                  | Design Systems                      | Design & UX     | 🧩
+developer-advocate.md                              | Developer Advocate                  | Marketing & SEO | 🛠️
+developer-experience.md                            | Developer Experience                | Developer Tools | ✨
+developer-tooling.md                               | Developer Tooling                   | Developer Tools | 🛠️
+devops-automator.md                                | DevOps Automator                    | platform        | 🤖
+discovery-coach.md                                 | Discovery Coach                     | Sales           | 🔬
+distributed-tracing.md                             | Distributed Tracing                 | monitoring-sre  | 🕸️
+django.md                                          | Django                              | python          | 🎸
+docker.md                                          | Docker                              | containers-k8s  | 🐳
+docs-architect.md                                  | Docs Architect                      | Documentation   | 🏛️
+document-generator.md                              | Document Generator                  | Niche & Specialized | 📄
+douyin.md                                          | Douyin                              | China Market    | 🎭
+dynamodb.md                                        | DynamoDB                            | Databases       | ⚙️
+e2e-testing.md                                     | E2E Testing                         | testing-qa      | 🔄
+elasticsearch.md                                   | Elasticsearch                       | Databases       | 🔍
+electron.md                                        | Electron                            | mobile          | ⚡
+elixir.md                                          | Elixir                              | languages/other | 🧪
+elk-stack.md                                       | ELK Stack                           | monitoring-sre  | 🦌
+embedded-systems.md                                | Embedded Systems                    | languages/systems | 📟
+embeddings.md                                      | Embeddings                          | AI & ML         | 🧮
+entity-framework.md                                | Entity Framework                    | languages/dotnet | 🗃️
+erlang.md                                          | Erlang                              | languages/other | 📡
+error-coordinator.md                               | Error Coordinator                   | Meta & Orchestration | 🚨
+error-handling.md                                  | Error Handling                      | Architecture & Patterns | 🛡️
+event-sourcing.md                                  | Event Sourcing                      | Architecture & Patterns | 📜
+executive-summary.md                               | Executive Summary                   | Business Operations | 📄
+experiment-tracker.md                              | Experiment Tracker                  | Project Management | 🧪
+express.md                                         | Express                             | backend-apis    | 🚂
+fastapi.md                                         | FastAPI                             | python          | ⚡
+fastify.md                                         | Fastify                             | backend-apis    | ⚡
+feedback-synthesizer.md                            | Feedback Synthesizer                | Niche & Specialized | 📢
+financial-modeling.md                              | Financial Modeling                  | Business Operations | 💹
+fintech-engineer.md                                | Fintech Engineer                    | Finance & Fintech | 🏦
+firmware-analysis.md                               | Firmware Analysis                   | security        | 📟
+flask.md                                           | Flask                               | python          | 🧴
+flutter.md                                         | Flutter                             | mobile          | 🦋
+france-market.md                                   | France Market                       | Regional/Industry | 🇫🇷
+full-stack-developer.md                            | Full-Stack Developer                | Architecture & Patterns | 🌐
+game-audio.md                                      | Game Audio                          | game-development | 🔊
+game-design.md                                     | Game Design                         | game-development | 🎲
+gdpr.md                                            | GDPR                                | security        | 🇪🇺
+geographer.md                                      | Geographer                          | worldbuilding   | 🌍
+git.md                                             | Git                                 | Developer Tools | 🌿
+github-actions.md                                  | GitHub Actions                      | ci-cd           | ⚙️
+github-workflows.md                                | GitHub Workflows                    | Developer Tools | 🐙
+gitlab-ci.md                                       | GitLab CI                           | ci-cd           | 🦊
+gitops.md                                          | GitOps                              | platform        | 🔀
+go.md                                              | Go                                  | languages/systems | 🐹
+godot.md                                           | Godot                               | game-development | 🤖
+government-digital.md                              | Government Digital                  | Regional/Industry | 🏛️
+grafana.md                                         | Grafana                             | monitoring-sre  | 📊
+graphql.md                                         | GraphQL                             | backend-apis    | 🔷
+growth-hacker.md                                   | Growth Hacker                       | Marketing & SEO | 🚀
+grpc.md                                            | gRPC                                | backend-apis    | 📡
+haskell.md                                         | Haskell                             | languages/other | 🔮
+healthcare-marketing.md                            | Healthcare Marketing                | Regional/Industry | 🏥
+helm.md                                            | Helm                                | containers-k8s  | ⎈
+historian.md                                       | Historian                           | worldbuilding   | 📜
+hr-&-recruitment.md                                | HR & Recruitment                    | Business Operations | 👥
+html.md                                            | HTML                                | frontend        | 📄
+hybrid-cloud.md                                    | Hybrid Cloud                        | cloud           | 🌐
+identity-trust-architect.md                        | Identity Trust Architect            | Regional/Industry | 🔐
+image-prompt-engineer.md                           | Image Prompt Engineer               | Design & UX     | 🖼️
+incident-response.md                               | Incident Response                   | monitoring-sre  | 🚨
+inclusive-design.md                                | Inclusive Design                    | Design & UX     | 🌍
+instagram-curator.md                               | Instagram Curator                   | Marketing & SEO | 📸
+interaction-design.md                              | Interaction Design                  | Design & UX     | 🔄
+ios-swift.md                                       | iOS Swift                           | mobile          | 🍎
+istio.md                                           | Istio                               | containers-k8s  | 🕸️
+jasmine.md                                         | Jasmine                             | testing-qa      | 🌸
+java.md                                            | Java                                | languages/jvm   | ☕
+javascript-testing.md                              | JavaScript Testing                  | testing-qa      | 📐
+javascript.md                                      | JavaScript                          | frontend        | 🟨
+jenkins.md                                         | Jenkins                             | ci-cd           | 🏗️
+jest.md                                            | Jest                                | testing-qa      | 🃏
+jira-steward.md                                    | Jira Steward                        | Project Management | 🎫
+julia.md                                           | Julia                               | languages/other | 📊
+kafka.md                                           | Kafka                               | Data Engineering | 📨
+knowledge-synthesizer.md                           | Knowledge Synthesizer               | Meta & Orchestration | 🧠
+korea-market.md                                    | Korea Market                        | Regional/Industry | 🇰🇷
+kotlin.md                                          | Kotlin                              | languages/jvm   | 🟣
+kpi-dashboards.md                                  | KPI Dashboards                      | Business Operations | 📊
+kuaishou.md                                        | Kuaishou                            | China Market    | 🎪
+kubernetes.md                                      | Kubernetes                          | containers-k8s  | ☸️
+langchain.md                                       | LangChain                           | AI & ML         | 🔗
+legacy-modernization.md                            | Legacy Modernization                | Architecture & Patterns | 🔧
+legal-compliance.md                                | Legal Compliance                    | Business Operations | ⚖️
+level-design.md                                    | Level Design                        | game-development | 🗺️
+linkedin-creator.md                                | LinkedIn Creator                    | Marketing & SEO | 💼
+linkerd.md                                         | Linkerd                             | containers-k8s  | 🔗
+livestream-commerce.md                             | Livestream Commerce                 | China Market    | 🎥
+llm-evaluation.md                                  | LLM Evaluation                      | AI & ML         | 📊
+loki.md                                            | Loki                                | monitoring-sre  | 📜
+lsp-engineer.md                                    | LSP Engineer                        | Niche & Specialized | 🔤
+lua.md                                             | Lua                                 | languages/other | 🌙
+m365-admin.md                                      | M365 Admin                          | Scripting       | ☁️
+macos-metal.md                                     | macOS Metal                         | xr-spatial      | 🔩
+malware-analysis.md                                | Malware Analysis                    | security        | 🦠
+market-research.md                                 | Market Research                     | Business Operations | 🔬
+market-researcher.md                               | Market Researcher                   | Research        | 📈
+mcp-builder.md                                     | MCP Builder                         | AI & ML         | 🔌
+memory-forensics.md                                | Memory Forensics                    | security        | 🧠
+memory-safety.md                                   | Memory Safety                       | languages/systems | 🛡️
+mermaid.md                                         | Mermaid                             | Documentation   | 🧜
+microservices.md                                   | Microservices                       | Architecture & Patterns | 🔷
+minecraft.md                                       | Minecraft                           | Niche & Specialized | ⛏️
+ml-pipelines.md                                    | ML Pipelines                        | AI & ML         | ⚙️
+mobile-security.md                                 | Mobile Security                     | mobile          | 🔐
+mocha.md                                           | Mocha                               | testing-qa      | ☕
+model-qa.md                                        | Model QA                            | Niche & Specialized | 🔬
+mongodb.md                                         | MongoDB                             | Databases       | 🍃
+monorepo.md                                        | Monorepo                            | Developer Tools | 📦
+mqtt.md                                            | MQTT                                | Data Engineering | 📶
+mssql.md                                           | MSSQL                               | Databases       | 🏢
+mtls.md                                            | mTLS                                | security        | 🔏
+multi-agent-coordinator.md                         | Multi-Agent Coordinator             | Meta & Orchestration | 🔗
+mysql.md                                           | MySQL                               | Databases       | 🐬
+narrative-design.md                                | Narrative Design                    | game-development | 📖
+narratologist.md                                   | Narratologist                       | worldbuilding   | 📚
+nats.md                                            | NATS                                | Data Engineering | 📡
+neo4j.md                                           | Neo4j                               | Databases       | 🕸️
+nestjs.md                                          | NestJS                              | backend-apis    | 🏰
+network-engineer.md                                | Network Engineer                    | cloud           | 🌍
+next.js.md                                         | Next.js                             | frontend        | ▲
+nft-standards.md                                   | NFT Standards                       | Web3 & Blockchain | 🎨
+nlp-engineer.md                                    | NLP Engineer                        | AI & ML         | 📝
+node.js.md                                         | Node.js                             | backend-apis    | 🟢
+numpy.md                                           | NumPy                               | python          | 🔢
+observability.md                                   | Observability                       | monitoring-sre  | 👁️
+ocaml.md                                           | OCaml                               | languages/other | 🐫
+on-call.md                                         | On-Call                             | monitoring-sre  | 📟
+onboarding.md                                      | Onboarding                          | Meta & Orchestration | 🚀
+openai-api.md                                      | OpenAI API                          | AI & ML         | 🤖
+openapi.md                                         | OpenAPI                             | backend-apis    | 📋
+opensearch.md                                      | OpenSearch                          | Databases       | 🔎
+opentelemetry.md                                   | OpenTelemetry                       | monitoring-sre  | 🔭
+orm.md                                             | ORM                                 | SQL & ORM       | 🔗
+outbound-strategist.md                             | Outbound Strategist                 | Sales           | 📤
+owasp.md                                           | OWASP                               | security        | 🛡️
+paid-media.md                                      | Paid Media                          | Marketing & SEO | 💰
+pandas.md                                          | Pandas                              | python          | 🐼
+payments.md                                        | Payments                            | Business Operations | 💳
+pci-compliance.md                                  | PCI Compliance                      | security        | 💳
+penetration-testing.md                             | Penetration Testing                 | security        | 🕵️
+performance-engineer.md                            | Performance Engineer                | Code Quality    | ⚡
+performance-monitor.md                             | Performance Monitor                 | Meta & Orchestration | 📊
+perl.md                                            | Perl                                | languages/other | 🪞
+php-laravel.md                                     | PHP Laravel                         | languages/other | 🐘
+pipeline-analyst.md                                | Pipeline Analyst                    | Sales           | 📊
+platform-engineer.md                               | Platform Engineer                   | platform        | 🛤️
+playwright.md                                      | Playwright                          | testing-qa      | 🎭
+podcast-strategist.md                              | Podcast Strategist                  | China Market    | 🎙️
+posix-shell.md                                     | POSIX Shell                         | Scripting       | 🐧
+postgresql.md                                      | PostgreSQL                          | Databases       | 🐘
+postmortem.md                                      | Postmortem                          | monitoring-sre  | 📋
+powershell.md                                      | PowerShell                          | Scripting       | 💠
+private-domain.md                                  | Private Domain                      | China Market    | 🔐
+product-manager.md                                 | Product Manager                     | Project Management | 🗺️
+project-manager.md                                 | Project Manager                     | Project Management | 📅
+prometheus.md                                      | Prometheus                          | monitoring-sre  | 🔥
+prompt-engineering.md                              | Prompt Engineering                  | AI & ML         | ✍️
+proposal-strategist.md                             | Proposal Strategist                 | Sales           | 📋
+psychologist.md                                    | Psychologist                        | worldbuilding   | 🧠
+pulumi.md                                          | Pulumi                              | iac             | 🫁
+python-async.md                                    | Python Async                        | python          | ⚡
+python-observability.md                            | Python Observability                | python          | 🔭
+python-packaging.md                                | Python Packaging                    | python          | 📦
+python-patterns.md                                 | Python Patterns                     | python          | 🧩
+python-performance.md                              | Python Performance                  | python          | 🚀
+python-resilience.md                               | Python Resilience                   | python          | 🛡️
+python-style.md                                    | Python Style                        | python          | 🎨
+python-testing.md                                  | Python Testing                      | python          | 🧪
+python-typing.md                                   | Python Typing                       | python          | 🏷️
+python.md                                          | Python                              | python          | 🐍
+pytorch.md                                         | PyTorch                             | python          | 🔥
+quant-analyst.md                                   | Quant Analyst                       | Finance & Fintech | 📐
+rabbitmq.md                                        | RabbitMQ                            | Data Engineering | 🐇
+rag.md                                             | RAG                                 | AI & ML         | 📚
+rapid-prototyper.md                                | Rapid Prototyper                    | Niche & Specialized | ⚡
+react-native.md                                    | React Native                        | mobile          | ⚛️
+react-state-management.md                          | React State Management              | frontend        | 🔄
+react.md                                           | React                               | frontend        | ⚛️
+reddit-builder.md                                  | Reddit Builder                      | Marketing & SEO | 🔴
+redis.md                                           | Redis                               | Databases       | ⚡
+refactoring.md                                     | Refactoring                         | Code Quality    | 🔧
+reference-builder.md                               | Reference Builder                   | Documentation   | 📚
+remix.md                                           | Remix                               | frontend        | 💿
+research-analyst.md                                | Research Analyst                    | Research        | 🔍
+responsive-design.md                               | Responsive Design                   | Design & UX     | 📱
+responsive-testing.md                              | Responsive Testing                  | Accessibility   | 🧪
+rest-api.md                                        | REST API                            | backend-apis    | 🌐
+reverse-engineering.md                             | Reverse Engineering                 | security        | 🔬
+risk-manager.md                                    | Risk Manager                        | Finance & Fintech | 🛡️
+roblox.md                                          | Roblox                              | game-development | 🧱
+rollup.md                                          | Rollup                              | Developer Tools | 🗞️
+ruby.md                                            | Ruby                                | languages/other | 💎
+rust.md                                            | Rust                                | languages/systems | 🦀
+saga-patterns.md                                   | Saga Patterns                       | Architecture & Patterns | 🔄
+sales-coach.md                                     | Sales Coach                         | Sales           | 🏅
+sales-engineer.md                                  | Sales Engineer                      | Sales           | ⚙️
+salesforce.md                                      | Salesforce                          | Niche & Specialized | ☁️
+sast.md                                            | SAST                                | security        | 🔍
+scala.md                                           | Scala                               | languages/jvm   | 🔴
+scientific-researcher.md                           | Scientific Researcher               | Research        | 🔬
+scikit-learn.md                                    | scikit-learn                        | python          | 📊
+scrum-master.md                                    | Scrum Master                        | Project Management | 🔄
+search-specialist.md                               | Search Specialist                   | Marketing & SEO | 🔎
+secrets-management.md                              | Secrets Management                  | ci-cd           | 🔐
+security-engineer.md                               | Security Engineer                   | security        | 🔐
+selenium.md                                        | Selenium                            | testing-qa      | 🌐
+seo-content.md                                     | SEO Content                         | Marketing & SEO | 📝
+seo-specialist.md                                  | SEO Specialist                      | Marketing & SEO | 🔍
+seo-technical.md                                   | SEO Technical                       | Marketing & SEO | 🏷️
+service-mesh-observability.md                      | Service Mesh Observability          | containers-k8s  | 📡
+shellcheck.md                                      | ShellCheck                          | Scripting       | ✅
+slack-integration.md                               | Slack Integration                   | Developer Tools | 💬
+slo-implementation.md                              | SLO Implementation                  | monitoring-sre  | 🎯
+social-media-strategist.md                         | Social Media Strategist             | Marketing & SEO | 📱
+software-architect.md                              | Software Architect                  | Architecture & Patterns | 🏗️
+solidity.md                                        | Solidity                            | Web3 & Blockchain | 💎
+spark.md                                           | Spark                               | Data Engineering | ✨
+spring-boot.md                                     | Spring Boot                         | languages/jvm   | 🌱
+sprint-prioritizer.md                              | Sprint Prioritizer                  | Project Management | 📌
+sql.md                                             | SQL                                 | SQL & ORM       | 📊
+sqlite.md                                          | SQLite                              | Databases       | 📦
+sre.md                                             | SRE                                 | monitoring-sre  | ⚙️
+standup-notes.md                                   | Standup Notes                       | Project Management | 📝
+startup-tools.md                                   | Startup Tools                       | Business Operations | 🚀
+studio-producer.md                                 | Studio Producer                     | Project Management | 🎬
+study-abroad-advisor.md                            | Study Abroad Advisor                | Regional/Industry | 🎒
+supply-chain.md                                    | Supply Chain                        | Business Operations | 🏭
+svelte.md                                          | Svelte                              | frontend        | 🔶
+tailwind-css.md                                    | Tailwind CSS                        | frontend        | 💨
+task-distributor.md                                | Task Distributor                    | Meta & Orchestration | 📋
+tauri.md                                           | Tauri                               | mobile          | 🦀
+tdd.md                                             | TDD                                 | testing-qa      | 🔴
+team-debugger.md                                   | Team Debugger                       | Meta & Orchestration | 🐛
+team-implementer.md                                | Team Implementer                    | Meta & Orchestration | 🔨
+team-lead.md                                       | Team Lead                           | Meta & Orchestration | 👑
+team-reviewer.md                                   | Team Reviewer                       | Meta & Orchestration | 🔍
+technical-art.md                                   | Technical Art                       | game-development | 🖌️
+technical-writer.md                                | Technical Writer                    | Documentation   | 📝
+tensorflow.md                                      | TensorFlow                          | python          | 🧠
+terminal-specialist.md                             | Terminal Specialist                 | Niche & Specialized | 💻
+terraform.md                                       | Terraform                           | iac             | 🏗️
+terragrunt.md                                      | Terragrunt                          | iac             | 🪵
+test-automation.md                                 | Test Automation                     | testing-qa      | 🤖
+testcafe.md                                        | TestCafe                            | testing-qa      | 🧪
+threat-modeling.md                                 | Threat Modeling                     | security        | 🎯
+tiktok-strategist.md                               | TikTok Strategist                   | Marketing & SEO | 🎵
+trend-analyst.md                                   | Trend Analyst                       | Research        | 📡
+trend-researcher.md                                | Trend Researcher                    | Niche & Specialized | 📈
+trpc.md                                            | tRPC                                | backend-apis    | 🔗
+twitter-engager.md                                 | Twitter Engager                     | Marketing & SEO | 🐦
+typescript.md                                      | TypeScript                          | frontend        | 🔵
+ui-designer.md                                     | UI Designer                         | Design & UX     | 🎨
+unity-editor-tools.md                              | Unity Editor Tools                  | game-development | 🔧
+unity-multiplayer.md                               | Unity Multiplayer                   | game-development | 🌐
+unity-shaders.md                                   | Unity Shaders                       | game-development | ✨
+unity.md                                           | Unity                               | game-development | 🎮
+unreal-art.md                                      | Unreal Art                          | game-development | 🎨
+unreal-engine.md                                   | Unreal Engine                       | game-development | 🎯
+unreal-multiplayer.md                              | Unreal Multiplayer                  | game-development | 🌍
+ux-architect.md                                    | UX Architect                        | Design & UX     | 🏗️
+ux-researcher.md                                   | UX Researcher                       | Design & UX     | 🔍
+vector-database.md                                 | Vector Database                     | AI & ML         | 🗄️
+video-production.md                                | Video Production                    | Marketing & SEO | 🎬
+visionos.md                                        | visionOS                            | xr-spatial      | 👁️
+visual-design.md                                   | Visual Design                       | Design & UX     | 🎯
+visual-storytelling.md                             | Visual Storytelling                 | Design & UX     | 📊
+vitest.md                                          | Vitest                              | testing-qa      | ⚡
+vue.md                                             | Vue                                 | frontend        | 💚
+web3-testing.md                                    | Web3 Testing                        | Web3 & Blockchain | 🧪
+webpack.md                                         | Webpack                             | Developer Tools | 📐
+websockets.md                                      | WebSockets                          | backend-apis    | 🔌
+wechat.md                                          | WeChat                              | China Market    | 💬
+weibo.md                                           | Weibo                               | China Market    | 🌐
+whimsy-design.md                                   | Whimsy Design                       | Design & UX     | 🎪
+windows-admin.md                                   | Windows Admin                       | platform        | 🪟
+wordpress.md                                       | WordPress                           | languages/other | 📝
+workflow-architect.md                              | Workflow Architect                  | Niche & Specialized | 🔀
+workflow-orchestration.md                          | Workflow Orchestration              | Architecture & Patterns | 🎭
+workflow-orchestrator.md                           | Workflow Orchestrator               | Meta & Orchestration | ⚙️
+xiaohongshu.md                                     | Xiaohongshu                         | China Market    | 📕
+xr-developer.md                                    | XR Developer                        | xr-spatial      | 🥽
+xr-interface.md                                    | XR Interface                        | xr-spatial      | 🖐️
+zettelkasten.md                                    | Zettelkasten                        | Niche & Specialized | 📝
+zhihu-strategist.md                                | Zhihu Strategist                    | China Market    | 🎓
