@@ -85,6 +85,17 @@ def cmd_team(opts: dict) -> int:
         return _team_status(opts)
 
     action = positional[0]
+
+    # Gate Pro-only features (templates and status are free)
+    PRO_ACTIONS = {"init", "sync", "apply"}
+    if action in PRO_ACTIONS:
+        try:
+            from cli.core.license import require_pro
+        except ImportError:
+            from core.license import require_pro
+        if not require_pro(f"Team {action}"):
+            return 1
+
     handlers = {
         "init": _team_init,
         "status": _team_status,

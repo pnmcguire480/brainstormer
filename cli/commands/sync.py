@@ -32,21 +32,36 @@ def cmd_sync(opts: dict) -> int:
         print()
         return 1
 
-    # Step 1: Reverse sync (vault -> project) — pull changes from Obsidian
-    print(f"  Pulling from Obsidian vault...")
-    reverse_results = sync_vault_to_project(project_root, info.name, vault_path)
+    # Step 1: Reverse sync (vault -> project) — Pro only (bi-directional)
+    try:
+        from cli.core.license import check_capability
+    except ImportError:
+        from core.license import check_capability
 
-    if reverse_results:
-        print(f"  Pulled {len(reverse_results)} changes from vault:")
-        for f, status in reverse_results.items():
-            print(f"    <- {f} ({status})")
-        print()
+    can_pull = check_capability("bidirectional_sync")
 
-    if reverse_only:
-        if not reverse_results:
-            print("  No changes to pull from vault.")
-        print()
-        return 0
+    if can_pull:
+        print(f"  Pulling from Obsidian vault...")
+        reverse_results = sync_vault_to_project(project_root, info.name, vault_path)
+
+        if reverse_results:
+            print(f"  Pulled {len(reverse_results)} changes from vault:")
+            for f, status in reverse_results.items():
+                print(f"    <- {f} ({status})")
+            print()
+
+        if reverse_only:
+            if not reverse_results:
+                print("  No changes to pull from vault.")
+            print()
+            return 0
+    else:
+        if reverse_only:
+            print("  Bi-directional sync requires Pro.")
+            print("  Upgrade: https://brainstormer.lemonsqueezy.com")
+            print()
+            return 1
+        # Community users skip pull phase silently, proceed to push
 
     # Step 2: Forward sync (project -> vault) — push to Obsidian
     print(f"  Pushing '{info.name}' to Obsidian...")

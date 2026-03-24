@@ -28,6 +28,17 @@ def cmd_agent(opts: dict) -> int:
         return 1
 
     action = positional[0]
+
+    # Gate Pro-only features
+    PRO_ACTIONS = {"create", "run", "publish"}
+    if action in PRO_ACTIONS:
+        try:
+            from cli.core.license import require_pro
+        except ImportError:
+            from core.license import require_pro
+        if not require_pro(f"Agent {action}"):
+            return 1
+
     handlers = {
         "create": _agent_create,
         "test": _agent_test,

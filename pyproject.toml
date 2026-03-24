@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "brainstormer"
-version = "2026.12.2"
+version = "2026.13.1"
 description = "The AI Development Operating System. Drop in. Init. Ship."
 readme = "README.md"
 license = "MIT"

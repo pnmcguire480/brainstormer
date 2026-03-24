@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BrainStormer Launch Tasks</title>
+<style>
+  @page { margin: 0.75in; }
+  body {
+    font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #1a1a2e;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 3px solid #6366f1;
+    padding-bottom: 0.5rem;
+  }
+  .subtitle { color: #666; margin-bottom: 2rem; font-size: 0.95rem; }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #6366f1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  h2 .phase-num {
+    background: #6366f1;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .task {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+  }
+  .task:last-child { border-bottom: none; }
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .task-content { flex: 1; }
+  .task-title { font-weight: 600; }
+  .task-detail { color: #666; font-size: 0.85rem; margin-top: 2px; }
+  .task-url { color: #6366f1; font-size: 0.8rem; word-break: break-all; }
+  .priority-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .p-now { background: #fee2e2; color: #dc2626; }
+  .p-soon { background: #fef3c7; color: #d97706; }
+  .p-later { background: #dbeafe; color: #2563eb; }
+  .done-note {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .done-note strong { color: #16a34a; }
+  .tip {
+    background: #f5f3ff;
+    border-left: 3px solid #6366f1;
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    color: #555;
+  }
+  .separator {
+    border: none;
+    border-top: 2px dashed #e5e7eb;
+    margin: 1.5rem 0;
+  }
+  @media print {
+    body { padding: 0; }
+    .task { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>BrainStormer Launch Tasks</h1>
+<p class="subtitle">Human-only tasks in priority order. Print this. Check boxes with a pen. One thing at a time.</p>
+
+<div class="done-note">
+  <strong>Claude already did:</strong> Tier enforcement (license.py, agent.py, team.py, sync.py), landing page rewrite (pricing, features, "Zero to BrainStormer" section), README update (badges, 25+ commands, pricing table), license buy command, LemonSqueezy API validation, version bump to 2026.13.1.
+</div>
+
+<h2><span class="phase-num">1</span> Right Now (before anything else)</h2>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Smoke-test the CLI <span class="priority-badge p-now">DO FIRST</span></div>
+    <div class="task-detail">Open terminal. Run every command from the next-session-prompt. Fix crashes before committing. Takes ~15 min.</div>
+    <div class="task-detail" style="font-family: monospace; margin-top: 4px;">brainstormer status && brainstormer doctor && brainstormer learn status</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Commit everything <span class="priority-badge p-now">DO FIRST</span></div>
+    <div class="task-detail">All Phase 1-4 code + launch changes are unstaged. Stage, commit, push. Don't skip this.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Check if "brainstormer" is available on PyPI</div>
+    <div class="task-url">https://pypi.org/project/brainstormer/</div>
+    <div class="task-detail">If taken, rename to <code>brainstormer-cli</code> or <code>brainstormer-ai</code> in pyproject.toml before publishing.</div>
+  </div>
+</div>
+
+<hr class="separator">
+
+<h2><span class="phase-num">2</span> This Week: Distribution Setup</h2>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Create LemonSqueezy account + store <span class="priority-badge p-soon">THIS WEEK</span></div>
+    <div class="task-url">https://lemonsqueezy.com</div>
+    <div class="task-detail">Store name: "BrainStormer". Create 1 product with 3 variants:</div>
+    <div class="task-detail">
+      &bull; <strong>Founding Member Monthly</strong> &mdash; $12/mo, limit 100 sales, license key ON<br>
+      &bull; <strong>Pro Monthly</strong> &mdash; $19/mo, license key ON<br>
+      &bull; <strong>Pro Annual</strong> &mdash; $180/yr, license key ON
+    </div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Update landing page checkout link</div>
+    <div class="task-detail">After creating the LemonSqueezy product, copy the checkout URL and replace <code>https://brainstormer.lemonsqueezy.com</code> in <code>site/index.html</code> with the real checkout link.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Set up PyPI trusted publishing</div>
+    <div class="task-detail">
+      1. GitHub repo &rarr; Settings &rarr; Environments &rarr; New: "pypi"<br>
+      2. PyPI.org &rarr; Manage brainstormer &rarr; Publishing &rarr; Add Trusted Publisher<br>
+      3. Set: owner=pnmcguire480, repo=brainstormer, workflow=release.yml, env=pypi
+    </div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Tag and release v2026.13.1</div>
+    <div class="task-detail" style="font-family: monospace;">git tag v2026.13.1 && git push origin main --tags</div>
+    <div class="task-detail">This triggers CI + release workflow. Watch GitHub Actions for green.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Create Discord server <span class="priority-badge p-soon">THIS WEEK</span></div>
+    <div class="task-detail">
+      Channels: #announcements (admin only), #general, #support, #feature-requests, #show-and-tell, #agents<br>
+      Add webhook to #announcements &rarr; copy URL &rarr; add as DISCORD_WEBHOOK_URL secret in GitHub repo settings.
+    </div>
+    <div class="tip">The invite link https://discord.gg/vrFcju9rBA is already in the landing page, README, and CLI error output.</div>
+  </div>
+</div>
+
+<hr class="separator">
+
+<h2><span class="phase-num">3</span> This Week: Terminal Demo GIF</h2>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Install VHS (Charm's terminal recorder)</div>
+    <div class="task-detail" style="font-family: monospace;">go install github.com/charmbracelet/vhs@latest</div>
+    <div class="task-detail">Or: <code>scoop install vhs</code> on Windows. No camera. No editing. Just a script.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Record 2 demo GIFs</div>
+    <div class="task-detail">
+      <strong>Demo 1:</strong> <code>brainstormer init</code> on a fresh temp project (the hero GIF)<br>
+      <strong>Demo 2:</strong> <code>brainstormer learn rule --from-diff HEAD~1</code> then <code>brainstormer status</code>
+    </div>
+    <div class="task-detail">Save as <code>site/demos/init.gif</code> and <code>site/demos/learn.gif</code>. Embed in README and landing page.</div>
+    <div class="tip">Write .tape files to script the recording. Run <code>vhs demo.tape</code>. Zero anxiety, infinite retakes.</div>
+  </div>
+</div>
+
+<hr class="separator">
+
+<h2><span class="phase-num">4</span> Launch Week: Marketing (you're a writer, lean into it)</h2>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Write Twitter/X launch thread <span class="priority-badge p-later">LAUNCH WEEK</span></div>
+    <div class="task-detail">5-7 tweets. Lead with the problem (AI forgets everything). Show terminal GIF. End with: "Free tier. 374 agents. <code>pip install brainstormer</code>". Pin it.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Post Show HN</div>
+    <div class="task-detail">Title: "Show HN: BrainStormer &mdash; An OS for AI-assisted dev that learns from your code"<br>
+    Keep it technical, honest, brief. Mention solo project. Link GitHub. Do NOT mention pricing in the HN post.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Reddit posts (3 subreddits, 3 angles)</div>
+    <div class="task-detail">
+      <strong>r/Python</strong> &mdash; "I built a CLI that auto-learns coding rules from your git diffs"<br>
+      <strong>r/ClaudeAI</strong> &mdash; "BrainStormer: 374 agents + auto-learning for Claude Code"<br>
+      <strong>r/ObsidianMD</strong> &mdash; "I built a CLI that auto-syncs your AI dev workflow to Obsidian"
+    </div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Submit to Product Hunt</div>
+    <div class="task-detail">Launch on a Tuesday, 12:01 AM PST. Prep: tagline, description, 3 screenshots (terminal), first comment.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Submit to FutureTools.io (week 2)</div>
+    <div class="task-detail">Wait until after launch week buzz. Let reviews accumulate first.</div>
+  </div>
+</div>
+
+<hr class="separator">
+
+<h2><span class="phase-num">5</span> The Matt Wolfe Play (week 3+)</h2>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Run BrainStormer on one of Matt Wolfe's public repos</div>
+    <div class="task-detail">Let it detect his stack, set up agents, start learning patterns. Record a Loom (screen only, no face, no voice) showing the results. Send him the link.</div>
+    <div class="tip">Don't cold-email before launch. Let buzz build 2-3 weeks first. The hook: "I initialized BrainStormer on YOUR repo and it found THIS."</div>
+  </div>
+</div>
+
+<hr class="separator">
+
+<h2><span class="phase-num">6</span> Post-Launch (ongoing)</h2>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Monitor + respond for 2 weeks (bugs only, no new features)</div>
+    <div class="task-detail">Watch Discord, GitHub Issues, telemetry (if users opt in). Fix crashes. Resist adding features.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Track founding member sales</div>
+    <div class="task-detail">At 80/100: post "20 slots left" on Twitter + Discord. At 100: flip price to $19/mo.</div>
+  </div>
+</div>
+
+<div class="task">
+  <div class="checkbox"></div>
+  <div class="task-content">
+    <div class="task-title">Expand CI test coverage</div>
+    <div class="task-detail">Add Phase 1-4 commands to .github/workflows/ci.yml. Currently only tests help, doctor, agent list, migrate.</div>
+  </div>
+</div>
+
+<hr class="separator">
+
+<p style="text-align: center; color: #999; font-size: 0.8rem; margin-top: 2rem;">
+  Generated 2026-03-24. One-sentence pitch: "BrainStormer is the missing OS layer for AI coding &mdash; it remembers everything you teach it across sessions, projects, and tools, so your AI assistant stops being a goldfish."
+</p>
+
+</body>
+</html>

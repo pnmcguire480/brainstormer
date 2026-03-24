@@ -174,8 +174,9 @@ Usage:
   brainstormer license status           Show detailed license info
 
 Tiers:
-  Community (free)   1 project, 10 agents, no vault sync
-  Pro                Unlimited projects/agents, vault sync, priority updates
+  Community (free)   3 projects, all agents, one-way vault sync
+  Pro ($12/mo)       Unlimited projects, agent creation, pipelines,
+                     bi-directional sync, team features, preview channel
   Team               Pro + shared configs, team agent library
   Enterprise         SSO, audit logging, air-gapped, custom agents
 """,
@@ -406,18 +407,14 @@ def _cmd_agent_list(opts: dict) -> int:
     try:
         from cli.core.detector import detect_project
         from cli.core.registry import list_agents, count_agents, get_top_agents
-        from cli.core.license import get_tier_capabilities
     except ImportError:
         from core.detector import detect_project
         from core.registry import list_agents, count_agents, get_top_agents
-        from core.license import get_tier_capabilities
 
     project_root = Path.cwd()
     info = detect_project(project_root)
     show_all = opts.get("all", False)
     total = count_agents()
-    caps = get_tier_capabilities()
-    agent_limit = caps["max_agents"]
 
     print()
     print(f"  Agents for: {info.name} ({info.summary})")
@@ -425,14 +422,7 @@ def _cmd_agent_list(opts: dict) -> int:
     print()
 
     if show_all:
-        if agent_limit != -1:
-            print(f"  Community tier: showing up to {agent_limit} agents.")
-            print(f"  Upgrade to Pro for the full catalog of {total}.")
-            print()
-
         agents = list_agents(show_all=True)
-        if agent_limit != -1:
-            agents = agents[:agent_limit]
 
         # Group by category
         categories = {}
@@ -455,8 +445,7 @@ def _cmd_agent_list(opts: dict) -> int:
     else:
         # Progressive disclosure: show top 10 for this stack
         stack = info.framework or info.stack or "general"
-        limit = min(10, agent_limit) if agent_limit != -1 else 10
-        top = get_top_agents(stack, limit=limit)
+        top = get_top_agents(stack, limit=10)
 
         if top:
             print("  Recommended for your stack:")
